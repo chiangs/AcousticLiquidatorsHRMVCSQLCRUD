@@ -5,17 +5,6 @@ SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0;
 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='TRADITIONAL,ALLOW_INVALID_DATES';
 
 -- -----------------------------------------------------
-<<<<<<< HEAD
--- Schema mydb
--- -----------------------------------------------------
-DROP SCHEMA IF EXISTS `mydb` ;
-
--- -----------------------------------------------------
--- Schema mydb
--- -----------------------------------------------------
-CREATE SCHEMA IF NOT EXISTS `mydb` DEFAULT CHARACTER SET utf8 ;
-USE `mydb` ;
-=======
 -- Schema EmployeeDB
 -- -----------------------------------------------------
 DROP SCHEMA IF EXISTS `EmployeeDB` ;
@@ -25,7 +14,6 @@ DROP SCHEMA IF EXISTS `EmployeeDB` ;
 -- -----------------------------------------------------
 CREATE SCHEMA IF NOT EXISTS `EmployeeDB` DEFAULT CHARACTER SET utf8 ;
 USE `EmployeeDB` ;
->>>>>>> 76fa8ad025c9024e5c580dd80d2f3121bd18ae8e
 
 -- -----------------------------------------------------
 -- Table `country`
@@ -187,11 +175,7 @@ SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
 -- Data for table `country`
 -- -----------------------------------------------------
 START TRANSACTION;
-<<<<<<< HEAD
-USE `mydb`;
-=======
 USE `EmployeeDB`;
->>>>>>> 76fa8ad025c9024e5c580dd80d2f3121bd18ae8e
 INSERT INTO `country` (`id`, `country`, `capital`) VALUES ('US', 'USA', 'Washington, D.C.');
 
 COMMIT;
@@ -201,13 +185,6 @@ COMMIT;
 -- Data for table `address`
 -- -----------------------------------------------------
 START TRANSACTION;
-<<<<<<< HEAD
-USE `mydb`;
-INSERT INTO `address` (`id`, `address`, `city`, `state_province`, `postal_code`, `country_id`, `phone`) VALUES (21, '1 AL HR Way', 'Denver', 'Colorado', 80237, 'US', 303-030-3333);
-INSERT INTO `address` (`id`, `address`, `city`, `state_province`, `postal_code`, `country_id`, `phone`) VALUES (1, '1111 One St', 'Denver', 'Colorado', 80237, 'US', 303-303-3333);
-INSERT INTO `address` (`id`, `address`, `city`, `state_province`, `postal_code`, `country_id`, `phone`) VALUES (2, '2222 Two St', 'Denver', 'Colorado', 80237, 'US', 303-333-3333);
-INSERT INTO `address` (`id`, `address`, `city`, `state_province`, `postal_code`, `country_id`, `phone`) VALUES (3, '3333 Three St', 'Denver', 'Colorado', 80237, 'US', 303-303-0000);
-=======
 USE `EmployeeDB`;
 INSERT INTO `address` (`id`, `address`, `city`, `state_province`, `postal_code`, `country_id`, `phone`) VALUES (26, '1701 WynKop', 'Denver', 'Colorado', 80202, 'US', 303-592-6712);
 INSERT INTO `address` (`id`, `address`, `city`, `state_province`, `postal_code`, `country_id`, `phone`) VALUES (27, '2500 Larimer St', 'Denver', 'Colorado', 80205, 'US', 303-954-8420);
@@ -232,7 +209,6 @@ INSERT INTO `address` (`id`, `address`, `city`, `state_province`, `postal_code`,
 INSERT INTO `address` (`id`, `address`, `city`, `state_province`, `postal_code`, `country_id`, `phone`) VALUES (19, '4287 Davis Lane', 'Denver', 'Colorado', 80202, 'US', 720-382-5411);
 INSERT INTO `address` (`id`, `address`, `city`, `state_province`, `postal_code`, `country_id`, `phone`) VALUES (20, '903 Sampson Street', 'Denver', 'Colorado', 80202, 'US', 303-602-8994);
 INSERT INTO `address` (`id`, `address`, `city`, `state_province`, `postal_code`, `country_id`, `phone`) VALUES (21, '2428 Davis Lane', 'Denver', 'Colorado', 80216, 'US', 720-427-4576);
->>>>>>> 76fa8ad025c9024e5c580dd80d2f3121bd18ae8e
 
 COMMIT;
 
@@ -241,14 +217,9 @@ COMMIT;
 -- Data for table `store`
 -- -----------------------------------------------------
 START TRANSACTION;
-<<<<<<< HEAD
-USE `mydb`;
-INSERT INTO `store` (`id`, `address_id`, `manager_id`) VALUES (1, 21, NULL);
-=======
 USE `EmployeeDB`;
 INSERT INTO `store` (`id`, `address_id`, `manager_id`) VALUES (1, 26, 7);
 INSERT INTO `store` (`id`, `address_id`, `manager_id`) VALUES (2, 27, 8);
->>>>>>> 76fa8ad025c9024e5c580dd80d2f3121bd18ae8e
 
 COMMIT;
 
@@ -257,15 +228,10 @@ COMMIT;
 -- Data for table `commissions`
 -- -----------------------------------------------------
 START TRANSACTION;
-<<<<<<< HEAD
-USE `mydb`;
-INSERT INTO `commissions` (`id`, `amount`) VALUES (1, 10);
-=======
 USE `EmployeeDB`;
 INSERT INTO `commissions` (`id`, `amount`) VALUES (1, 10);
 INSERT INTO `commissions` (`id`, `amount`) VALUES (2, 15);
 INSERT INTO `commissions` (`id`, `amount`) VALUES (3, 20);
->>>>>>> 76fa8ad025c9024e5c580dd80d2f3121bd18ae8e
 
 COMMIT;
 
@@ -274,10 +240,6 @@ COMMIT;
 -- Data for table `salary`
 -- -----------------------------------------------------
 START TRANSACTION;
-<<<<<<< HEAD
-USE `mydb`;
-INSERT INTO `salary` (`level`, `commission_level`, `salary`) VALUES (5, 1, 1000000);
-=======
 USE `EmployeeDB`;
 INSERT INTO `salary` (`level`, `commission_level`, `salary`) VALUES (6, 1, 1000000);
 INSERT INTO `salary` (`level`, `commission_level`, `salary`) VALUES (5, 1, 90000);
@@ -285,7 +247,6 @@ INSERT INTO `salary` (`level`, `commission_level`, `salary`) VALUES (4, 2, 60000
 INSERT INTO `salary` (`level`, `commission_level`, `salary`) VALUES (3, 2, 45000);
 INSERT INTO `salary` (`level`, `commission_level`, `salary`) VALUES (2, 3, 35000);
 INSERT INTO `salary` (`level`, `commission_level`, `salary`) VALUES (1, 3, 18000);
->>>>>>> 76fa8ad025c9024e5c580dd80d2f3121bd18ae8e
 
 COMMIT;
 
@@ -294,10 +255,6 @@ COMMIT;
 -- Data for table `department`
 -- -----------------------------------------------------
 START TRANSACTION;
-<<<<<<< HEAD
-USE `mydb`;
-INSERT INTO `department` (`department_id`, `department_desc_function`) VALUES (1, 'Manager Section');
-=======
 USE `EmployeeDB`;
 INSERT INTO `department` (`department_id`, `department_desc_function`) VALUES (1, 'Executive Members');
 INSERT INTO `department` (`department_id`, `department_desc_function`) VALUES (2, 'General Manager');
@@ -305,7 +262,6 @@ INSERT INTO `department` (`department_id`, `department_desc_function`) VALUES (3
 INSERT INTO `department` (`department_id`, `department_desc_function`) VALUES (4, 'Store Assistant Manager');
 INSERT INTO `department` (`department_id`, `department_desc_function`) VALUES (5 , 'Full Time Employee');
 INSERT INTO `department` (`department_id`, `department_desc_function`) VALUES (6, 'Part Time Employee');
->>>>>>> 76fa8ad025c9024e5c580dd80d2f3121bd18ae8e
 
 COMMIT;
 
@@ -314,12 +270,6 @@ COMMIT;
 -- Data for table `employee`
 -- -----------------------------------------------------
 START TRANSACTION;
-<<<<<<< HEAD
-USE `mydb`;
-INSERT INTO `employee` (`emp_id`, `first_name`, `last_name`, `address_id`, `date_of_birth`, `job_title`, `salary_level`, `store_id`, `department_id`, `supervisor_id`, `hire_date`, `email`, `active_inactive`) VALUES (1, 'stephen', 'chiang', 1, '1980-11-01', 'Manager', 5, 1, 1, NULL, NULL, 'stephen.e.chiang@gmail.com', 1);
-INSERT INTO `employee` (`emp_id`, `first_name`, `last_name`, `address_id`, `date_of_birth`, `job_title`, `salary_level`, `store_id`, `department_id`, `supervisor_id`, `hire_date`, `email`, `active_inactive`) VALUES (2, 'daniel', 'balarezo', 2, '1983-12-20', 'Manager', 5, 1, 1, NULL, NULL, 'd.balarezo@gmail.com', 1);
-INSERT INTO `employee` (`emp_id`, `first_name`, `last_name`, `address_id`, `date_of_birth`, `job_title`, `salary_level`, `store_id`, `department_id`, `supervisor_id`, `hire_date`, `email`, `active_inactive`) VALUES (3, 'will', 'roberts', 3, '1985-05-17', 'Manager', 5, 1, 1, NULL, NULL, 'will.roberts@gmail.com', 1);
-=======
 USE `EmployeeDB`;
 INSERT INTO `employee` (`emp_id`, `first_name`, `last_name`, `address_id`, `date_of_birth`, `job_title`, `salary_level`, `store_id`, `department_id`, `supervisor_id`, `hire_date`, `email`, `active_inactive`) VALUES (1, 'Stephen', 'Chiang', 1, '1980-11-01', 'CEO', 6, 1, 1, NULL, '2016-02-01', 'stephen.e.chiang@gmail.com', 1);
 INSERT INTO `employee` (`emp_id`, `first_name`, `last_name`, `address_id`, `date_of_birth`, `job_title`, `salary_level`, `store_id`, `department_id`, `supervisor_id`, `hire_date`, `email`, `active_inactive`) VALUES (2, 'Daniel', 'Balarezo', 2, '1985-04-10', 'CMO', 6, 1, 1, NULL, '2016-02-01', 'd.balarezo@gmail.com', 1);
@@ -342,7 +292,6 @@ INSERT INTO `employee` (`emp_id`, `first_name`, `last_name`, `address_id`, `date
 INSERT INTO `employee` (`emp_id`, `first_name`, `last_name`, `address_id`, `date_of_birth`, `job_title`, `salary_level`, `store_id`, `department_id`, `supervisor_id`, `hire_date`, `email`, `active_inactive`) VALUES (19, 'Bobby', 'Tables', 19, '1987-05-11', 'Assistant Store Manager', 3, 1, 6, 9, '2016-04-10', 'littleBobbyTables@DropItLikeItHot.com', 0);
 INSERT INTO `employee` (`emp_id`, `first_name`, `last_name`, `address_id`, `date_of_birth`, `job_title`, `salary_level`, `store_id`, `department_id`, `supervisor_id`, `hire_date`, `email`, `active_inactive`) VALUES (20, 'Rob', 'Dobbs', 20, '1991-08-24', 'Full Time Employee', 2, 2, 5, 10, '2017-01-30', 'dobbs@yahoo.com', 1);
 INSERT INTO `employee` (`emp_id`, `first_name`, `last_name`, `address_id`, `date_of_birth`, `job_title`, `salary_level`, `store_id`, `department_id`, `supervisor_id`, `hire_date`, `email`, `active_inactive`) VALUES (21, 'Elsie', 'Neal', 21, '1992-05-30', 'Store Manager', 4, 1, 3, 6, '2016-02-01', 'OneilNeil@yahoo.com', 0);
->>>>>>> 76fa8ad025c9024e5c580dd80d2f3121bd18ae8e
 
 COMMIT;
 
