@@ -34,7 +34,7 @@ ENGINE = InnoDB;
 DROP TABLE IF EXISTS `address` ;
 
 CREATE TABLE IF NOT EXISTS `address` (
-  `id` INT NOT NULL AUTO_INCREMENT,
+  `id` INT(2) NOT NULL,
   `address` VARCHAR(45) NULL,
   `city` VARCHAR(45) NULL,
   `state_province` VARCHAR(45) NULL,
@@ -57,7 +57,7 @@ ENGINE = InnoDB;
 DROP TABLE IF EXISTS `store` ;
 
 CREATE TABLE IF NOT EXISTS `store` (
-  `id` INT NOT NULL AUTO_INCREMENT,
+  `id` INT(2) NOT NULL,
   `address_id` INT NULL,
   `manager_id` INT NULL,
   PRIMARY KEY (`id`),
@@ -88,7 +88,7 @@ ENGINE = InnoDB;
 DROP TABLE IF EXISTS `salary` ;
 
 CREATE TABLE IF NOT EXISTS `salary` (
-  `level` INT NOT NULL,
+  `level` INT(2) NOT NULL,
   `commission_level` INT(2) NULL,
   `salary` INT NULL,
   PRIMARY KEY (`level`),
@@ -119,19 +119,19 @@ ENGINE = InnoDB;
 DROP TABLE IF EXISTS `employee` ;
 
 CREATE TABLE IF NOT EXISTS `employee` (
-  `emp_id` INT NOT NULL AUTO_INCREMENT,
+  `emp_id` INT(2) NOT NULL,
   `first_name` CHAR(20) NOT NULL,
   `last_name` CHAR(20) NOT NULL,
   `address_id` INT(2) NULL,
   `date_of_birth` VARCHAR(45) NULL,
   `job_title` VARCHAR(45) NULL,
   `salary_level` INT(2) NULL,
-  `store_id` INT NULL,
+  `store_id` INT(2) NULL,
   `department_id` INT(2) NULL,
   `supervisor_id` INT(2) NULL,
   `hire_date` DATE NULL,
   `email` VARCHAR(45) NULL,
-  `active_inactive` VARCHAR(45) NOT NULL,
+  `active_inactive` INT(1) NOT NULL,
   PRIMARY KEY (`emp_id`),
   INDEX `id_idx` (`address_id` ASC),
   INDEX `level_idx` (`salary_level` ASC),
@@ -239,9 +239,9 @@ COMMIT;
 -- -----------------------------------------------------
 START TRANSACTION;
 USE `mydb`;
-INSERT INTO `employee` (`emp_id`, `first_name`, `last_name`, `address_id`, `date_of_birth`, `job_title`, `salary_level`, `store_id`, `department_id`, `supervisor_id`, `hire_date`, `email`, `active_inactive`) VALUES (1, 'stephen', 'chiang', 1, '1980-11-01', 'Manager', 5, 1, 1, NULL, NULL, 'stephen.e.chiang@gmail.com', '1');
-INSERT INTO `employee` (`emp_id`, `first_name`, `last_name`, `address_id`, `date_of_birth`, `job_title`, `salary_level`, `store_id`, `department_id`, `supervisor_id`, `hire_date`, `email`, `active_inactive`) VALUES (2, 'daniel', 'balarezo', 2, '1983-12-20', 'Manager', 5, 1, 1, NULL, NULL, 'd.balarezo@gmail.com', '1');
-INSERT INTO `employee` (`emp_id`, `first_name`, `last_name`, `address_id`, `date_of_birth`, `job_title`, `salary_level`, `store_id`, `department_id`, `supervisor_id`, `hire_date`, `email`, `active_inactive`) VALUES (3, 'will', 'roberts', 3, '1985-05-17', 'Manager', 5, 1, 1, NULL, NULL, 'will.roberts@gmail.com', '1');
+INSERT INTO `employee` (`emp_id`, `first_name`, `last_name`, `address_id`, `date_of_birth`, `job_title`, `salary_level`, `store_id`, `department_id`, `supervisor_id`, `hire_date`, `email`, `active_inactive`) VALUES (1, 'stephen', 'chiang', 1, '1980-11-01', 'Manager', 5, 1, 1, NULL, NULL, 'stephen.e.chiang@gmail.com', 1);
+INSERT INTO `employee` (`emp_id`, `first_name`, `last_name`, `address_id`, `date_of_birth`, `job_title`, `salary_level`, `store_id`, `department_id`, `supervisor_id`, `hire_date`, `email`, `active_inactive`) VALUES (2, 'daniel', 'balarezo', 2, '1983-12-20', 'Manager', 5, 1, 1, NULL, NULL, 'd.balarezo@gmail.com', 1);
+INSERT INTO `employee` (`emp_id`, `first_name`, `last_name`, `address_id`, `date_of_birth`, `job_title`, `salary_level`, `store_id`, `department_id`, `supervisor_id`, `hire_date`, `email`, `active_inactive`) VALUES (3, 'will', 'roberts', 3, '1985-05-17', 'Manager', 5, 1, 1, NULL, NULL, 'will.roberts@gmail.com', 1);
 
 COMMIT;
 
