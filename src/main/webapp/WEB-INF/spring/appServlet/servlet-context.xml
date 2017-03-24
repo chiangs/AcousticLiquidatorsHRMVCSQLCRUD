@@ -21,7 +21,11 @@
 		<beans:property name="suffix" value=".jsp" />
 	</beans:bean>
 	
+<<<<<<< HEAD
+	<context:component-scan base-package="com.sd.al" />
+=======
 	<context:component-scan base-package="com.sd.al com.sd.controllers" />
+>>>>>>> 76fa8ad025c9024e5c580dd80d2f3121bd18ae8e
 	<beans:bean id="dao" class="com.sd.data.HRDAOImpl"></beans:bean>
 	
 	
