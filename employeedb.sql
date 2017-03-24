@@ -5,15 +5,15 @@ SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0;
 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='TRADITIONAL,ALLOW_INVALID_DATES';
 
 -- -----------------------------------------------------
--- Schema mydb
+-- Schema EmployeeDB
 -- -----------------------------------------------------
-DROP SCHEMA IF EXISTS `mydb` ;
+DROP SCHEMA IF EXISTS `EmployeeDB` ;
 
 -- -----------------------------------------------------
--- Schema mydb
+-- Schema EmployeeDB
 -- -----------------------------------------------------
-CREATE SCHEMA IF NOT EXISTS `mydb` DEFAULT CHARACTER SET utf8 ;
-USE `mydb` ;
+CREATE SCHEMA IF NOT EXISTS `EmployeeDB` DEFAULT CHARACTER SET utf8 ;
+USE `EmployeeDB` ;
 
 -- -----------------------------------------------------
 -- Table `country`
@@ -175,7 +175,7 @@ SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
 -- Data for table `country`
 -- -----------------------------------------------------
 START TRANSACTION;
-USE `mydb`;
+USE `EmployeeDB`;
 INSERT INTO `country` (`id`, `country`, `capital`) VALUES ('US', 'USA', 'Washington, D.C.');
 
 COMMIT;
@@ -185,7 +185,7 @@ COMMIT;
 -- Data for table `address`
 -- -----------------------------------------------------
 START TRANSACTION;
-USE `mydb`;
+USE `EmployeeDB`;
 INSERT INTO `address` (`id`, `address`, `city`, `state_province`, `postal_code`, `country_id`, `phone`) VALUES (26, '1701 WynKop', 'Denver', 'Colorado', 80202, 'US', 303-592-6712);
 INSERT INTO `address` (`id`, `address`, `city`, `state_province`, `postal_code`, `country_id`, `phone`) VALUES (27, '2500 Larimer St', 'Denver', 'Colorado', 80205, 'US', 303-954-8420);
 INSERT INTO `address` (`id`, `address`, `city`, `state_province`, `postal_code`, `country_id`, `phone`) VALUES (1, '2222 Two St', 'Denver', 'Colorado', 80237, 'US', 303-333-3333);
@@ -217,7 +217,7 @@ COMMIT;
 -- Data for table `store`
 -- -----------------------------------------------------
 START TRANSACTION;
-USE `mydb`;
+USE `EmployeeDB`;
 INSERT INTO `store` (`id`, `address_id`, `manager_id`) VALUES (1, 26, 7);
 INSERT INTO `store` (`id`, `address_id`, `manager_id`) VALUES (2, 27, 8);
 
@@ -228,7 +228,7 @@ COMMIT;
 -- Data for table `commissions`
 -- -----------------------------------------------------
 START TRANSACTION;
-USE `mydb`;
+USE `EmployeeDB`;
 INSERT INTO `commissions` (`id`, `amount`) VALUES (1, 10);
 INSERT INTO `commissions` (`id`, `amount`) VALUES (2, 15);
 INSERT INTO `commissions` (`id`, `amount`) VALUES (3, 20);
@@ -240,7 +240,7 @@ COMMIT;
 -- Data for table `salary`
 -- -----------------------------------------------------
 START TRANSACTION;
-USE `mydb`;
+USE `EmployeeDB`;
 INSERT INTO `salary` (`level`, `commission_level`, `salary`) VALUES (6, 1, 1000000);
 INSERT INTO `salary` (`level`, `commission_level`, `salary`) VALUES (5, 1, 90000);
 INSERT INTO `salary` (`level`, `commission_level`, `salary`) VALUES (4, 2, 60000);
@@ -255,7 +255,7 @@ COMMIT;
 -- Data for table `department`
 -- -----------------------------------------------------
 START TRANSACTION;
-USE `mydb`;
+USE `EmployeeDB`;
 INSERT INTO `department` (`department_id`, `department_desc_function`) VALUES (1, 'Executive Members');
 INSERT INTO `department` (`department_id`, `department_desc_function`) VALUES (2, 'General Manager');
 INSERT INTO `department` (`department_id`, `department_desc_function`) VALUES (3, 'Store Manager');
@@ -270,7 +270,7 @@ COMMIT;
 -- Data for table `employee`
 -- -----------------------------------------------------
 START TRANSACTION;
-USE `mydb`;
+USE `EmployeeDB`;
 INSERT INTO `employee` (`emp_id`, `first_name`, `last_name`, `address_id`, `date_of_birth`, `job_title`, `salary_level`, `store_id`, `department_id`, `supervisor_id`, `hire_date`, `email`, `active_inactive`) VALUES (1, 'Stephen', 'Chiang', 1, '1980-11-01', 'CEO', 6, 1, 1, NULL, '2016-02-01', 'stephen.e.chiang@gmail.com', 1);
 INSERT INTO `employee` (`emp_id`, `first_name`, `last_name`, `address_id`, `date_of_birth`, `job_title`, `salary_level`, `store_id`, `department_id`, `supervisor_id`, `hire_date`, `email`, `active_inactive`) VALUES (2, 'Daniel', 'Balarezo', 2, '1985-04-10', 'CMO', 6, 1, 1, NULL, '2016-02-01', 'd.balarezo@gmail.com', 1);
 INSERT INTO `employee` (`emp_id`, `first_name`, `last_name`, `address_id`, `date_of_birth`, `job_title`, `salary_level`, `store_id`, `department_id`, `supervisor_id`, `hire_date`, `email`, `active_inactive`) VALUES (3, 'Will', 'Roberts', 3, '1987-05-17', 'COO', 6, 1, 1, NULL, '2016-02-01', 'will.roberts@gmail.com', 1);
