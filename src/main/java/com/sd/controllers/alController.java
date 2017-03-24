@@ -11,12 +11,18 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.sd.data.Employee;
 import com.sd.data.HRDAO;
+import com.sd.data.HRDAOImpl;
 
 @Controller
 public class alController {
 
 	@Autowired
-	private HRDAO dao;
+	private HRDAO dao = new HRDAOImpl();
+	
+	@RequestMapping(value = "home.do")
+	public String home() {
+		return ("home");
+	}
 	
 	@RequestMapping(value = "listEmployeeInfo.do", method = RequestMethod.GET)
 	public ModelAndView getByID() {
