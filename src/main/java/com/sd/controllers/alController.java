@@ -1,5 +1,7 @@
 package com.sd.controllers;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -15,33 +17,51 @@ public class alController {
 
 	@Autowired
 	private HRDAO dao;
-
-	@RequestMapping(value = "getEmployeeInfo.do", params = "name", method = RequestMethod.GET)
-	public ModelAndView getByName(@RequestParam("name") String n) {
+	
+	@RequestMapping(value = "listEmployeeInfo.do", method = RequestMethod.GET)
+	public ModelAndView getByID() {
 		ModelAndView mv = new ModelAndView();
-		Employee emp = dao.getEmployeeByName(n);
+		List<Employee> empList = dao.listEmployees();
+		mv.setViewName("list");
+		mv.addObject("employee", empList);
+		return mv;
+	}
+	
+	@RequestMapping(value = "getEmployeeInfo.do", params = "id", method = RequestMethod.GET)
+	public ModelAndView getByID(@RequestParam("id") int id) {
+		ModelAndView mv = new ModelAndView();
+		Employee emp = dao.getEmployeeById(id);
 		mv.setViewName("home");
 		mv.addObject("employee", emp);
 		return mv;
 	}
+//
+//	@RequestMapping(value = "getEmployeeInfo.do", params = "name", method = RequestMethod.GET)
+//	public ModelAndView getByName(@RequestParam("name") String n) {
+//		ModelAndView mv = new ModelAndView();
+//		Employee emp = dao.getEmployeeByName(n);
+//		mv.setViewName("home");
+//		mv.addObject("employee", emp);
+//		return mv;
+//	}
 
-	@RequestMapping(value = "getEmployeeInfo.do", params = "address", method = RequestMethod.GET)
-	public ModelAndView getByName(@RequestParam("address") String a) {
-		ModelAndView mv = new ModelAndView();
-		Employee emp = dao.getEmployeeByName(a);
-		mv.setViewName("home");
-	    mv.addObject("employee", emp);
-		return mv;
-	}
+//	@RequestMapping(value = "getEmployeeInfo.do", params = "address", method = RequestMethod.GET)
+//	public ModelAndView getByName(@RequestParam("address") String a) {
+//		ModelAndView mv = new ModelAndView();
+//		Employee emp = dao.getEmployeeByName(a);
+//		mv.setViewName("home");
+//	    mv.addObject("employee", emp);
+//		return mv;
+//	}
 
-	@RequestMapping(value = "getEmployeeInfo.do", params = "department", method = RequestMethod.GET)
-	public ModelAndView getByName(@RequestParam("department") String d) {
-		ModelAndView mv = new ModelAndView();
-		Employee emp = dao.getEmployeeByDepartment(d);
-		mv.setViewName("home");
-		mv.addObject("employee", emp);
-		return mv;
-	}
+//	@RequestMapping(value = "getEmployeeInfo.do", params = "department", method = RequestMethod.GET)
+//	public ModelAndView getByName(@RequestParam("department") String d) {
+//		ModelAndView mv = new ModelAndView();
+//		Employee emp = dao.getEmployeeByDepartment(d);
+//		mv.setViewName("home");
+//		mv.addObject("employee", emp);
+//		return mv;
+//	}
 
 	@RequestMapping(value = "getEmployeeInfo.do", params = "salary", method = RequestMethod.GET)
 	public ModelAndView getByName(@RequestParam("salary") int s) {
