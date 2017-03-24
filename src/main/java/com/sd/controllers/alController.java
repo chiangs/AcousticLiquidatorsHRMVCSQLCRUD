@@ -26,7 +26,7 @@ public class alController {
 	}
 
 	@RequestMapping(value = "getEmployeeInfo.do", params = "address", method = RequestMethod.GET)
-	public ModelAndView getByName(@RequestParam("address") String a) {
+	public ModelAndView getByAddress(@RequestParam("address") String a) {
 		ModelAndView mv = new ModelAndView();
 		Employee emp = dao.getEmployeeByName(a);
 		mv.setViewName("home");
@@ -35,7 +35,7 @@ public class alController {
 	}
 
 	@RequestMapping(value = "getEmployeeInfo.do", params = "department", method = RequestMethod.GET)
-	public ModelAndView getByName(@RequestParam("department") String d) {
+	public ModelAndView getByDepartment(@RequestParam("department") String d) {
 		ModelAndView mv = new ModelAndView();
 		Employee emp = dao.getEmployeeByDepartment(d);
 		mv.setViewName("home");
