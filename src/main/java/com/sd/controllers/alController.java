@@ -63,15 +63,15 @@ public class alController {
 //		return mv;
 //	}
 
-	@RequestMapping(value = "getEmployeeInfo.do", params = "salary", method = RequestMethod.GET)
-	public ModelAndView getByName(@RequestParam("salary") int s) {
-		ModelAndView mv = new ModelAndView();
-		Employee emp = dao.getEmployeeBySalary(s);
-		mv.setViewName("home");
-	    mv.addObject("employee", emp);
-		return mv;
-
-	}
+//	@RequestMapping(value = "getEmployeeInfo.do", params = "salary", method = RequestMethod.GET)
+//	public ModelAndView getByName(@RequestParam("salary") int s) {
+//		ModelAndView mv = new ModelAndView();
+//		Employee emp = dao.getEmployeeBySalary(s);
+//		mv.setViewName("home");
+//	    mv.addObject("employee", emp);
+//		return mv;
+//
+//	}
 
 	@RequestMapping(value = "addEmployee.do", method = RequestMethod.POST)
 	public ModelAndView addEmployee(Employee employee) {
@@ -83,30 +83,30 @@ public class alController {
 	}
 
 	@RequestMapping(value = "deleteEmployee.do", method = RequestMethod.POST)
-	public ModelAndView deleteEmployee(int id) /*Are we getting employee by id?*/{
+	public ModelAndView deleteEmployee(Employee employee) {
 		ModelAndView mv = new ModelAndView();
 		mv.setViewName("home");
-		String response = dao.deleteEmployee(id);
+		String response = dao.deleteEmployee(employee);
 		mv.addObject("response", response);
 		return mv;
 	}
 
-	@RequestMapping(value = "editPop.do", method = RequestMethod.POST)
-	public ModelAndView editPopFilm(int id) {
-		ModelAndView mv = new ModelAndView();
-		System.out.println(id);
-		Employee emp = dao.getEmployeeByID2(id);
-		mv.setViewName("home");
-		mv.addObject("editEmployee", emp);
-		return mv;
-	}
+//	@RequestMapping(value = "editPop.do", method = RequestMethod.POST)
+//	public ModelAndView editPopFilm(Employee employee) {
+//		ModelAndView mv = new ModelAndView();
+//		System.out.println(id);
+//		Employee emp = dao.getEmployeeByID2(employee);
+//		mv.setViewName("home");
+//		mv.addObject("editEmployee", emp);
+//		return mv;
+//	}
 
 	@RequestMapping(value = "edit.do", method = RequestMethod.POST)
 	public ModelAndView editEmployee(Employee employee) {
 		ModelAndView mv = new ModelAndView();
-		dao.editEmployee(employee);
+		dao.updateEmployee(employee);
 		mv.setViewName("home");
-		mv.addObject("employee", emp);
+		mv.addObject("employee", employee);
 		return mv;
 	}
 
