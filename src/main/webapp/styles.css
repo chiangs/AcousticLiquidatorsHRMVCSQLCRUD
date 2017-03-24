@@ -27,7 +27,7 @@ body {
 
 
 .navbar-default {
-    background-color: #2e3549;
+    background-color: #88B04B;
     border: none;
 }
 
@@ -37,12 +37,12 @@ body {
 }
 
 .navbar-default .navbar-toggle {
-    background-color: #2e3549;
+    background-color: #88B04B;
     border: none;
 }
 
 .navbar-default .navbar-toggle:hover, .navbar-default .navbar-toggle:focus {
-    background-color: #2f7a94;
+    background-color: black;
 }
 
 .icon-bar {
@@ -60,7 +60,7 @@ body {
 }
 
 #myNavbar a {
-    color: #eeeeee;
+    color: #fff;
     text-transform: uppercase;
     margin: 0 0 0 8px;
     text-align: center;
@@ -76,7 +76,7 @@ body {
 
 #myNavbar a:hover {
     text-align: center;
-    color: #ffa308;
+    color: black;
 }
 
 .active a {
@@ -151,7 +151,7 @@ body {
         filter: grayscale(0);
     }
 
-    .icon .text a {
+    .icon .text {
         position: relative;
         left: -15px;
         color: rgba(255, 255, 255, 0);
@@ -161,7 +161,7 @@ body {
         text-decoration: none;
     }
 
-    .icon:hover .text a {
+    .icon:hover .text {
         visibility: visible;
         text-decoration: none;
         color: black;
