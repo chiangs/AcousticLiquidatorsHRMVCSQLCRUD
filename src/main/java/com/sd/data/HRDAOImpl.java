@@ -49,7 +49,6 @@ public class HRDAOImpl implements HRDAO {
 	@Override
 	public Employee addEmployee(Employee newEmp) {
 
-		int employeeID = newEmp.getEmployeeID();
 		String firstName = newEmp.getFirstName();
 		String lastName = newEmp.getLastName();
 		int address_id = newEmp.getAddress_id();
@@ -106,7 +105,6 @@ public class HRDAOImpl implements HRDAO {
 	@Override
 	public Employee updateEmployee(Employee emp) {
 		
-		int employeeID = emp.getEmployeeID();
 		String firstName = emp.getFirstName();
 		String lastName = emp.getLastName();
 		int address_id = emp.getAddress_id();
@@ -127,8 +125,6 @@ public class HRDAOImpl implements HRDAO {
         		+ ", job_title = ?, salary_level = ?, store_id = ?"
         		+ ", department_id = ?, supervisor_id = ?, hire_date = ?"
         		+ ", email = ?, active_inactive = ? WHERE id = ?";
-
-        String sql2 = "SELECT LAST_INSERT_ID()";
 
         try {
             Connection conn = DriverManager.getConnection(url, user, pass);
