@@ -21,7 +21,7 @@
 		<beans:property name="suffix" value=".jsp" />
 	</beans:bean>
 	
-	<context:component-scan base-package="com.sd.al" />
+	<context:component-scan base-package="com.sd.al com.sd.controllers" />
 	<beans:bean id="dao" class="com.sd.data.HRDAOImpl"></beans:bean>
 	
 	
