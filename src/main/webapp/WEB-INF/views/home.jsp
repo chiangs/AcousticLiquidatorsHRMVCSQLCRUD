@@ -14,7 +14,7 @@
 	<div class="projectthumbs">
 		<div class="col-xs-4 col-sm-4 col-md-12">
 			<div class="icon">
-				<a href="listEmployee.do"><img id="inv"
+				<a href="listEmployeeInfo.do"><img id="inv"
 					src="images/empListIcon.png" alt="employee list button"></a>
 				<h4 class="text">List Employees (All)</h4>
 			</div>

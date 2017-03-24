@@ -13,10 +13,10 @@
 		</div>
 		<div class="collapse navbar-collapse" id="myNavbar">
 			<ul class="nav navbar-nav navbar-right">
-				<li><a class="bold" href="home.jsp">home</a></li>
-				<li><a class="bold" href="listEmployee.jsp">list employees</a></li>
-				<li><a class="bold" href="editEmployee.jsp">employee actions</a></li>
-				<li><a class="bold" href="contact.jsp">contact</a></li>
+				<li><a class="bold" href="home.do">home</a></li>
+				<li><a class="bold" href="listEmployeeInfo.do">list employees</a></li>
+				<li><a class="bold" href="editEmployee.do">employee actions</a></li>
+				<li><a class="bold" href="contact.do">contact</a></li>
 			</ul>
 		</div>
 	</div>
