@@ -10,28 +10,30 @@
 <a href="addEmployee.do">Add Employee</a>
 
 
-	<form action="getEmployeeInfo.do" method="GET">
+	<form action="listEmployeeInfo.do" method="GET">
 		<input type="text" name="name"> <input type="submit"
 			value="Get Employee By Name">
 	</form>
 
-	<c:if test="${! empty employee }">
-		<b>Name:</b>${employee.firstname} ${employee.lastname}<br>
-		<b>Employee Id:</b> ${employee.empID} <br>
+	<c:if test="${! empty employees }">
+	<c:forEach items="${employees}" var="employee">
+		<b>Name:</b>${employee.firstName} ${employee.lastName}<br>
+		<b>Employee Id:</b> ${employee.employeeID} <br>
 		<b>Job Title:</b> ${employee.jobTitle} <br>
-		<b>Department</b> ${employee.department} <br>
+		<b>Department</b> ${employee.departmentID} <br>
 		<b>Supervisor:</b> ${employee.supervisor} <br>
 		<b>Status</b>	${employee.status} <br>
 		<br>
 		<form action="deleteEmployee.do" method="POST">
-			<button type="submit" value="${employee.id}" name="id">Delete</button>
+			<button type="submit" value="${employee.employeeID}" name="id">Delete</button>
 		</form>
 
 		<form action="editPop.do" method="POST">
-			<button type="submit" value="${employee.id}" name="id">Edit</button>
+			<button type="submit" value="${employee.employeeID}" name="id">Edit</button>
 		</form>
 		<br>
 	</c:if>
+	</c:forEach>
 	
 	
 	
