@@ -7,149 +7,128 @@ public class Employee {
 	 * Active/Inactive Department
 	 */
 
+	int employeeID;
 	String firstName;
 	String lastName;
-	String street;
-	String city;
-	String country;
-	int phone;
+	int address_id;
 	String dob;
-	int empId;
 	String jobTitle;
-	String supervisor;
+	int salaryLevel;
+	int storeID;
+	int departmentID;
+	int supervisor;
 	String hireDate;
-	String status;
-	String department;
-
-	public Employee(String firstName, String lastName, String street, String city, String country, int phone,
-			String dob, int empId, String jobTitle, String supervisor, String hireDate, String status,
-			String department) {
+	String email;
+	int status;
+	
+	public Employee(){
+		
+	}
+	
+	public Employee(int employeeID, String firstName, String lastName, int address_id, String dob, String jobTitle,
+			int salaryLevel, int storeID, int departmentID, int supervisor, String hireDate, String email, int status) {
 		super();
+		this.employeeID = employeeID;
 		this.firstName = firstName;
 		this.lastName = lastName;
-		this.street = street;
-		this.city = city;
-		this.country = country;
-		this.phone = phone;
+		this.address_id = address_id;
 		this.dob = dob;
-		this.empId = empId;
 		this.jobTitle = jobTitle;
+		this.salaryLevel = salaryLevel;
+		this.storeID = storeID;
+		this.departmentID = departmentID;
 		this.supervisor = supervisor;
 		this.hireDate = hireDate;
+		this.email = email;
 		this.status = status;
-		this.department = department;
+	}
+	
+	@Override
+	public String toString() {
+		return "Employee [employeeID=" + employeeID + ", firstName=" + firstName + ", lastName=" + lastName
+				+ ", address_id=" + address_id + ", dob=" + dob + ", jobTitle=" + jobTitle + ", salaryLevel="
+				+ salaryLevel + ", storeID=" + storeID + ", departmentID=" + departmentID + ", supervisor=" + supervisor
+				+ ", hireDate=" + hireDate + ", email=" + email + ", status=" + status + "]";
 	}
 
+	public int getEmployeeID() {
+		return employeeID;
+	}
+	public void setEmployeeID(int employeeID) {
+		this.employeeID = employeeID;
+	}
 	public String getFirstName() {
 		return firstName;
 	}
-
 	public void setFirstName(String firstName) {
 		this.firstName = firstName;
 	}
-
 	public String getLastName() {
 		return lastName;
 	}
-
 	public void setLastName(String lastName) {
 		this.lastName = lastName;
 	}
-
-	public String getStreet() {
-		return street;
+	public int getAddress_id() {
+		return address_id;
 	}
-
-	public void setStreet(String street) {
-		this.street = street;
+	public void setAddress_id(int address_id) {
+		this.address_id = address_id;
 	}
-
-	public String getCity() {
-		return city;
-	}
-
-	public void setCity(String city) {
-		this.city = city;
-	}
-
-	public String getCountry() {
-		return country;
-	}
-
-	public void setCountry(String country) {
-		this.country = country;
-	}
-
-	public int getPhone() {
-		return phone;
-	}
-
-	public void setPhone(int phone) {
-		this.phone = phone;
-	}
-
 	public String getDob() {
 		return dob;
 	}
-
 	public void setDob(String dob) {
 		this.dob = dob;
 	}
-
-	public int getEmpId() {
-		return empId;
-	}
-
-	public void setEmpId(int empId) {
-		this.empId = empId;
-	}
-
 	public String getJobTitle() {
 		return jobTitle;
 	}
-
 	public void setJobTitle(String jobTitle) {
 		this.jobTitle = jobTitle;
 	}
-
-	public String getSupervisor() {
+	public int getSalaryLevel() {
+		return salaryLevel;
+	}
+	public void setSalaryLevel(int salaryLevel) {
+		this.salaryLevel = salaryLevel;
+	}
+	public int getStoreID() {
+		return storeID;
+	}
+	public void setStoreID(int storeID) {
+		this.storeID = storeID;
+	}
+	public int getDepartmentID() {
+		return departmentID;
+	}
+	public void setDepartmentID(int departmentID) {
+		this.departmentID = departmentID;
+	}
+	public int getSupervisor() {
 		return supervisor;
 	}
-
-	public void setSupervisor(String supervisor) {
+	public void setSupervisor(int supervisor) {
 		this.supervisor = supervisor;
 	}
-
 	public String getHireDate() {
 		return hireDate;
 	}
-
 	public void setHireDate(String hireDate) {
 		this.hireDate = hireDate;
 	}
-
-	public String getStatus() {
+	public String getEmail() {
+		return email;
+	}
+	public void setEmail(String email) {
+		this.email = email;
+	}
+	public int getStatus() {
 		return status;
 	}
-
-	public void setStatus(String status) {
+	public void setStatus(int status) {
 		this.status = status;
 	}
-
-	public String getDepartment() {
-		return department;
-	}
-
-	public void setDepartment(String department) {
-		this.department = department;
-	}
-
-	@Override
-	public String toString() {
-		return "Employee [firstName=" + firstName + ", lastName=" + lastName + ", street=" + street + ", city=" + city
-				+ ", country=" + country + ", phone=" + phone + ", dob=" + dob + ", empId=" + empId + ", jobTitle="
-				+ jobTitle + ", supervisor=" + supervisor + ", hireDate=" + hireDate + ", status=" + status
-				+ ", department=" + department + "]";
-	}
-
 }
+
+	
