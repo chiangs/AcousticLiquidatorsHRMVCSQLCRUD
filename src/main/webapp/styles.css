@@ -67,11 +67,12 @@ body {
     font-weight: 900;
 }
 
-.navbar h4 {
+.navbar h4 a {
     color: #fff;
     font-weight: 900;
     padding-top: 5px;
     padding-left: 5px;
+    text-decoration: none;
 }
 
 #myNavbar a:hover {
@@ -120,12 +121,25 @@ body {
 
 /* home */
 
+.welcome {
+	padding-left: 50px;
+	padding-bottom: 30px;
+	font-size: 3vw;
+	text-align:center;
+}
+
 .projectthumbs {
     text-align: center;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    flex-basis: 10vw;
+    justify-content: center;
 }
 
 #inv {
     border-radius: 15%;
+    width: 10vw;
 }
 
 .icon {
@@ -151,7 +165,7 @@ body {
         filter: grayscale(0);
     }
 
-    .icon .text {
+    .icon .text a {
         position: relative;
         left: -15px;
         color: rgba(255, 255, 255, 0);
@@ -161,7 +175,7 @@ body {
         text-decoration: none;
     }
 
-    .icon:hover .text {
+    .icon:hover .text a {
         visibility: visible;
         text-decoration: none;
         color: black;
@@ -175,13 +189,6 @@ body {
 }
 
 
-.projectthumbs {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    flex-basis: 10vw;
-    justify-content: center;
-}
 
 /* Contact */
 
