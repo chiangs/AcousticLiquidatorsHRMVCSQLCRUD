@@ -26,10 +26,8 @@ body {
 }
 
 
-/* NavBar */
-
 .navbar-default {
-    background-color: #B7E3E4;
+    background-color: #2e3549;
     border: none;
 }
 
@@ -39,16 +37,16 @@ body {
 }
 
 .navbar-default .navbar-toggle {
-    background-color: #B7E3E4;
+    background-color: #2e3549;
     border: none;
 }
 
 .navbar-default .navbar-toggle:hover, .navbar-default .navbar-toggle:focus {
-    background-color: #fff;
+    background-color: #2f7a94;
 }
 
 .icon-bar {
-    background-color: #F03F35 !important;
+    background-color: #ecf035 !important;
 }
 
 #logo img {
@@ -62,20 +60,62 @@ body {
 }
 
 #myNavbar a {
-    color: #F03F35;
+    color: #eeeeee;
     text-transform: uppercase;
     margin: 0 0 0 8px;
     text-align: center;
+    font-weight: 900;
+}
+
+.navbar h4 {
+    color: #fff;
+    font-weight: 900;
+    padding-top: 5px;
+    padding-left: 5px;
 }
 
 #myNavbar a:hover {
     text-align: center;
+    color: #ffa308;
 }
 
 .active a {
     color: #fff !important;
     background-color: #2f7a94 !important;
     font-style: italic;
+}
+
+.mainBackground {
+    margin:0 auto;
+    height: 50vh;
+    width: auto;
+}
+
+.mainBackgroundImage {
+    height: 100%;
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.mainBackgroundImage img {
+    height: 60vh;
+    padding-right: 30px;
+}
+
+.dropdown-menu {
+  background-color: #2e3549;
+}
+
+.navbar.navbar-default .dropdown-menu > li > a:hover,
+.navbar.navbar-default .dropdown-menu>li>a:focus {
+  background-color: #2f7a94 !important;
+}
+
+.navbar.navbar-default .navbar-nav li.dropdown.open > .dropdown-toggle,
+.navbar.navbar-default .navbar-nav li.dropdown.active > .dropdown-toggle,
+.navbar.navbar-default .navbar-nav li.dropdown.open.active > .dropdown-toggle {
+  background: #2f7a94;
 }
 
 /* home */
