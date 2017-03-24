@@ -2,9 +2,13 @@
 <%@ page session="false"%>
 <html>
 <head>
+    <%@ include file="headStyles.jsp" %>
+	
 <title>Acoustic Liquidators</title>
 </head>
 <body>
+    <%@ include file="navbar.jsp" %>
+
 	<h1>Acoustic Liquidators Employee Terminal</h1>
 
 <a href="addEmployee.do">Add Employee</a>
@@ -35,4 +39,7 @@
 	
 	
 </body>
+<!-- footer code fragment -->
+    <%@ include file="footer.jsp" %>
+
 </html>
