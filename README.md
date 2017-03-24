@@ -2,7 +2,7 @@
 
 **Under Construction**
 
-An employee management web-app for Human Resources department using a MAMP stack consisting of Java, the Spring MVC framework, and MySQL database technologies with CRUD functionality. This web-app implements session control, and has a MySQL database deployed to an Apache Tomcat 8 Server. This is also the first time where we attempted to constrain the project to pass the command object rather than fields between the .jsp-controller-DAO. The web-app is also mobile responsive and data can be viewed/manipulated with most popular mobile devices. The database was created with MySQL Workbench.
+An employee management web-app for Human Resources department using a MAMP stack consisting of Java, the Spring MVC framework, and MySQL database technologies with CRUD functionality. This web-app implements session control, and has a MySQL database deployed to an Apache Tomcat 8 Server. This is also the first time where we strictly implementing Object-Relational Mapping (ORM) by passing the command object rather than individual database column values for operations between the .jsp-controller-DAO. The web-app is also mobile responsive and data can be viewed/manipulated with most popular mobile devices. The database was created with MySQL Workbench.
 
 This web-app is a collaborative project. The goal, milestone, and separation of roles/responsibilities are illustrated in the structure/flow chart image embedded in the README but can also be found in slideshow format in the root folder. (Acoustic Liquidators is a randomly selected team name which does not have any relation to the project itself.)
 
