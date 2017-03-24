@@ -6,9 +6,10 @@
 				data-target="#myNavbar">
 				<span class="icon-bar"></span> <span class="icon-bar"></span> <span
 					class="icon-bar"></span>
-			</button>
-			<a class="navbar-brand" id="logo" href="contact.html"><img
-				src="navbar-brand.png" alt="AL HR Management App"></a>
+			</button><h4>
+                    <a href="home.jsp">AL HR Management App</a>
+                </h4>
+
 		</div>
 		<div class="collapse navbar-collapse" id="myNavbar">
 			<ul class="nav navbar-nav navbar-right">
