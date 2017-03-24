@@ -8,9 +8,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class HRDAOImpl implements HRDAO {
-	private static String url = "jdbc:mysql://localhost:3306/sdvid";
-	private String user = "student";
-	private String pass = "student";
+	private static String url = "jdbc:mysql://localhost:3306/employeedb";
+	private String user = "alhrmgr";
+	private String pass = "hruser";
 	
 	public HRDAOImpl() {
 		try {
