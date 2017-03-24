@@ -3,10 +3,11 @@ package com.sd.data;
 import java.util.List;
 
 public interface HRDAO {
-	 	Employee getEmployeeById(Employee emp);
+	 	Employee getEmployeeById(int id);
 //	 	Employee getEmployeeByNameContains(Employee emp);
-	 	Employee addEmployee(Employee emp);
+	 	Employee addEmployee(Employee newEmp);
 		Employee updateEmployee(Employee emp);
-		void deactivateEmployee(Employee emp);
+		String deleteEmployee(Employee emp);
 		List<Employee> listEmployees();
+		List<Employee> listEmployeesActiveOnly();
 	}
