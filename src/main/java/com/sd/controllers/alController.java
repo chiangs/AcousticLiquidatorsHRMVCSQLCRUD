@@ -30,8 +30,7 @@ public class alController {
 	}
 	
 	@RequestMapping(value = "listEmployeeInfo.do", method = RequestMethod.GET)
-	public ModelAndView getByID() {
-		System.out.println("Test");
+	public ModelAndView getEmployeeById(){
 		ModelAndView mv = new ModelAndView();
 		List<Employee> empList = dao.listEmployees();
 		mv.setViewName("listEmployee");
