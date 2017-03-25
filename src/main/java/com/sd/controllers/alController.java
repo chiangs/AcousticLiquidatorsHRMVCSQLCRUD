@@ -24,6 +24,11 @@ public class alController {
 		return ("home");
 	}
 	
+	@RequestMapping(value = "contact.do")
+	public String contact() {
+		return ("contact");
+	}
+	
 	@RequestMapping(value = "listEmployeeInfo.do", method = RequestMethod.GET)
 	public ModelAndView getByID() {
 		System.out.println("Test");

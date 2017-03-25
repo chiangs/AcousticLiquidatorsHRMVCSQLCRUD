@@ -1,26 +1,29 @@
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ page session="false"%>
+<html>
+<head>
+<%@ include file="headStyles.jsp"%>
 
-<div class="container-fluid" id="contact-container">
+<title>Contact the devs</title>
+</head>
+<body>
+	<%@ include file="navbar.jsp"%>
+			<h1 class="welcome">Contact us for more information</h1>
 
-	<div class="contact-content">
-		<h1>Contact us for more information</h1>
-		<h4>
-			<a href="mailto:stephen.e.chiang@gmail.com">stephen.e.chiang@gmail.com</a>
-			</h3>
-			<ul class="fa-ul" id="social-list">
-				<li><a target="_blank" href="https://www.danrezo.com"> <i
-						class="fa fa-superpowers fa-3x" aria-hidden="true"></i></a></li>
-				<li><a target="_blank" href="https://www.chiangs.ninja"><i
-						class="fa fa-superpowers fa-3x" aria-hidden="true"></i> </a></li>
-				<li><a target="_blank" href="#"><i
-						class="fa fa-superpowers fa-3x" aria-hidden="true"></i> </a></li>
-			</ul>
-			<div class="geo">
-				<p>
-					<a class="coord" target="_blank"
-						href="https://goo.gl/maps/PZP6EgzLvu32">56.0352720°,
-						009.9322510°&emsp;-&emsp; Skanderborg, Denmark</a>
-				</p>
-			</div>
+				<ul class="fa-ul contact">
+					<li><i class="fa fa-user" aria-hidden="true"></i>
+					<a target="_blank" href="https://www.danrezo.com"> Daniel Balarezo</a></li>
+					<li><i class="fa fa-user" aria-hidden="true"></i>
+					<a target="_blank" href="https://www.chiangs.ninja"> Stephen Chiang</a></li>
+					<li><i class="fa fa-user" aria-hidden="true"></i>
+					<a target="_blank" href="#"> Will Roberts</a></li>
+				</ul>
 	</div>
+	<%@ include file="endBody.jsp"%>
+</body>
+<!-- footer code fragment -->
+<%@ include file="footer.jsp"%>
 
-	
+</html>
+
+

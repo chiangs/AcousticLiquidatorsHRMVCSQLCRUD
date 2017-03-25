@@ -42,7 +42,7 @@ body {
 }
 
 .navbar-default .navbar-toggle:hover, .navbar-default .navbar-toggle:focus {
-    background-color: black;
+    background-color: #fff;
 }
 
 .icon-bar {
@@ -191,28 +191,16 @@ body {
 
 
 /* Contact */
-
-.contact-content {
-    text-align: center;
-    padding: 50px 0;
+.contact {
+	text-align:left;
+	font-size:4vw;
+	left: 10vw;
 }
 
-.contact-content h1 {
-    font-size: calc(15% + 3vw)
-
+.contact a {
+		text-decoration: none;
 }
 
-.contact-content a {
-    color: #fff;
-    font-size: calc(20% + 1vw)
-
-}
-
-.contact-content p {
-    font-size: 20px;
-    font-size: calc(20% + 1vw)
-
-}
 
 /* Footer */
 
