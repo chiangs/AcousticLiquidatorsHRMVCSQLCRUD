@@ -17,7 +17,7 @@ import com.sd.data.HRDAOImpl;
 public class alController {
 
 	@Autowired
-	private HRDAO dao = new HRDAOImpl();
+	private HRDAO dao;
 	
 	@RequestMapping(value = "home.do")
 	public String home() {
@@ -87,7 +87,7 @@ public class alController {
 	@RequestMapping(value = "addEmployee.do", method = RequestMethod.POST)
 	public ModelAndView addEmployee(Employee employee) {
 		ModelAndView mv = new ModelAndView();
-		mv.setViewName("home");
+		mv.setViewName("addEmployee");
 		Employee emp = dao.addEmployee(employee);
 		mv.addObject("newEmployee", emp);
 		return mv;
@@ -116,7 +116,7 @@ public class alController {
 	public ModelAndView editEmployee(Employee employee) {
 		ModelAndView mv = new ModelAndView();
 		dao.updateEmployee(employee);
-		mv.setViewName("home");
+		mv.setViewName("editEmployee");
 		mv.addObject("employee", employee);
 		return mv;
 	}

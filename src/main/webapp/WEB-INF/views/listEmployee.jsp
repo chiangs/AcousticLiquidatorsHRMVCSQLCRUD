@@ -8,16 +8,21 @@
 <title>AL Employee List</title>
 </head>
 <body>
-	<a href="addEmployee.do">Add Employee</a>
+<!-- 	<a href="addEmployee.do">Add Employee</a>
+ -->
 
-
+	<form action="addEmployee.do" method="POST">
+	<input type="submit"
+			value="Add Employee">
+	</form>
 	<form action="listEmployeeInfo.do" method="GET">
 		<input type="text" name="name"> <input type="submit"
 			value="Get Employee By Name">
-</form>
-	<div class=empList>
+	</form>
+	<div class="empList">
 		<table>
 			<tr>
+
 				<th>Employee Id</th>
 				<th>Name</th>
 				<th>Job Title</th>
@@ -28,12 +33,13 @@
 					<c:forEach items="${employees}" var="employee">
 						<tr>
 							<td>${employee.employeeID}</td>
-							<td>${employee.firstName}${employee.lastName}</td>
+							<td>${employee.firstName} ${employee.lastName}</td>
 							<td>${employee.jobTitle}</td>
 							<td>${employee.departmentID}</td>
 							<td>${employee.supervisor}</td>
 							<td>${employee.status}</td>
 							<br>
+							
 							<%-- 	<form action="deleteEmployee.do" method="POST">
 			<button type="submit" value="${employee.employeeID}" name="id">Delete</button>
 		</form>
@@ -46,7 +52,7 @@
 					</c:forEach>
 				</c:if>
 		</table>
-  </div>
+	</div>
 
 
 
