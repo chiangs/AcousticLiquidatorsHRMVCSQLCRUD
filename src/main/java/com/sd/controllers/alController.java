@@ -99,10 +99,19 @@ public class alController {
 	}
 
 	// populates the edit form for editing on empActions.jsp
-	@RequestMapping(value = "editPop.do", method = RequestMethod.POST)
-	public ModelAndView editPopFilm(int id) {
+	@RequestMapping(value = "editPop.do", method = RequestMethod.GET)
+    public ModelAndView editPop() {
+        ModelAndView mv = new ModelAndView();
+        mv.setViewName("empActions");
+        return mv;
+    }
+	
+	
+	
+	@RequestMapping(value = "addEmployee.do", method = RequestMethod.POST)
+	public ModelAndView addEmp(Employee e) {
 		ModelAndView mv = new ModelAndView();
-		Employee emp = dao.getEmployeeById(id);
+		Employee emp = dao.addEmployee(e);
 		mv.setViewName("empActions");
 		mv.addObject("editEmployee", emp);
 		return mv;

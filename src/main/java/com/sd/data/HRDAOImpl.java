@@ -60,13 +60,14 @@ public class HRDAOImpl implements HRDAO {
 		int supervisor = newEmp.getSupervisor();
 		String hireDate = newEmp.getHireDate();
 		String email = newEmp.getEmail();
-		
 
 		String sql = "INSERT INTO employee (first_name, last_name, address_id, date_of_birth, job_title, salary_level, store_id, department_id, supervisor_id, hire_date, email, active_inactive) "
 				+ " VALUES (?,?,?,?,?,?,?,?,?,?,?)";
 
-		String sql2 = "SELECT LAST_INSERT_ID()";
+//		String sql2 = "SELECT LAST_INSERT_ID()";
 
+		
+		
 		try {
 			Connection conn = DriverManager.getConnection(url, user, pass);
 			PreparedStatement stmt = conn.prepareStatement(sql); // or (sql, Statement.RETURN_GENERATED_KEYS);)
@@ -85,10 +86,11 @@ public class HRDAOImpl implements HRDAO {
 
 			int uc = stmt.executeUpdate();
 			if (uc > 0) {
-				ResultSet rs = stmt.executeQuery(sql2); // or stmt.getGeneratedKeys();
-				if (rs.next()) {
-					newEmp.setEmployeeID(rs.getInt(1));
-				}
+				return newEmp;
+//				ResultSet rs = stmt.executeQuery(sql2); // or stmt.getGeneratedKeys();
+//				if (rs.next()) {
+//					newEmp.setEmployeeID(rs.getInt(1));
+//				}
 			}
 			stmt.close();
 			conn.close();
@@ -96,12 +98,13 @@ public class HRDAOImpl implements HRDAO {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		return newEmp;
+		return null;
 	}
 
 	@Override
 	public Employee updateEmployee(Employee emp) {
 		
+
 		String firstName = emp.getFirstName();
 		String lastName = emp.getLastName();
 		int address_id = emp.getAddress_id();
@@ -114,7 +117,6 @@ public class HRDAOImpl implements HRDAO {
 		String hireDate = emp.getHireDate();
 		String email = emp.getEmail();
 		int status = emp.getStatus();
-		
 		Integer id = emp.getEmployeeID();
         
         String sql = "UPDATE employee SET first_name =?, "
