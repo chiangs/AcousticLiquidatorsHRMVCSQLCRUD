@@ -114,7 +114,7 @@ public class alController {
 	public ModelAndView addEmp(Employee e) {
 		ModelAndView mv = new ModelAndView();
 		Employee emp = dao.addEmployee(e);
-		mv.setViewName("empActions");
+		mv.setViewName("listEmployee");
 		mv.addObject("editEmployee", emp);
 		return mv;
 	}
