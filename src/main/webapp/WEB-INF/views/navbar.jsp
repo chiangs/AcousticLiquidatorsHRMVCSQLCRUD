@@ -13,7 +13,7 @@
 			<ul class="nav navbar-nav navbar-right">
 				<li><a class="bold" href="home.do">home</a></li>
 				<li><a class="bold" href="listEmployeeInfo.do">list employees</a></li>
-				<li><a class="bold" href="update.do">employee actions</a></li>
+				<li><a class="bold" href="editPop.do">employee actions</a></li>
 				<li><a class="bold" href="contact.do">contact</a></li>
 			</ul>
 		</div>
