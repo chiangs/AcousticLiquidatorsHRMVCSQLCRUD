@@ -101,8 +101,10 @@ public class alController {
 	// populates the edit form for editing on empActions.jsp
 	@RequestMapping(value = "editPop.do", method = RequestMethod.GET)
     public ModelAndView editPop() {
-        ModelAndView mv = new ModelAndView();
-        mv.setViewName("empActions");
+		ModelAndView mv = new ModelAndView();
+		List<Employee> employees = dao.listEmployees();
+		mv.setViewName("empActions");
+		mv.addObject("employees", employees);
         return mv;
     }
 	

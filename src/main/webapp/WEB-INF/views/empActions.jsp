@@ -22,7 +22,7 @@
 			DOB: <input type="text" name="dob"><br> Job Title: <input
 				type="text" name="jobTitle"><br> Salary Level: <input
 				type="text" name="salaryLevel"><br> Department ID: <input
-				type="text" name="department"><br> Supervisor: <input
+				type="text" name="departmentID"><br> Supervisor: <input
 				type="text" name="supervisor"><br> Hire Date: <input
 				type="text" name="hireDate"><br> Email: <input
 				type="text" name="email"><br>
@@ -33,29 +33,27 @@
 
 	<!-- Edit Form -->
 	<div class="col-xs-12 col-md-4 col-lg-4">
-	<h2>Edit Form</h2>
+		<h2>Edit Form</h2>
 
-	<form action="getEmployeeInfo.do" method="GET">
-		<input type="text" class="form-control" name="id"
-			placeholder="Enter Employee ID#"> <input type="submit"
-			class="btn btn-primary" value="Get Information!">
-	</form>
+		<form action="getEmployeeInfo.do" method="GET">
+			<input type="text" class="form-control" name="id"
+				placeholder="Enter Employee ID#"> <input type="submit"
+				class="btn btn-primary" value="Get Information!">
+		</form>
 
 	</div>
-	
+
 
 	<!-- Delete Form -->
 	<div class="col-xs-12 col-md-4 col-lg-4">
 		<h2>Delete Form</h2>
-		<form action="DeleteProductData.do" method="POST">
-			<select name="ID">
+		<form action="deleteEmployee.do" method="POST">
+			<select name="empObj">
 				<c:forEach var="item" items="${employees}">
-					<option value="${employee.ID}">Product ID: ${item.ID},
-						${item.lastName}, ${item.firstName}</option>
+					<option value="${item.employeeID}">${item.employeeID} - ${item.firstName} ${item.lastName}</option>
 				</c:forEach>
-			</select> <br>
-			<button type="submit" value="${employee.employeeID}" name="empObj"
-				class="btn btn-danger">delete</button>
+				</select>
+			<button type="submit" value="${item.employeeID}" name="empObj2" class="btn btn-danger">Delete</button>
 		</form>
 	</div>
 	<%@ include file="endBody.jsp"%>
