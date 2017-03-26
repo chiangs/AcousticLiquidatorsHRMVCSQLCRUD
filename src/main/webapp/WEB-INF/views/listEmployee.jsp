@@ -11,15 +11,17 @@
 <body>
 	<%@ include file="navbar.jsp"%>
 
-	
-	<form action="getEmployeeInfo.do" method="GET">
-		<input type="text" name="id"> <input type="submit"
-			value="Get Information By ID">
-	</form>
-	<div class="empList">
-		<table>
-			<tr>
+	<div class="listEmp">
+		<form action="getEmployeeInfo.do" method="GET">
+			<div class="form-group">
+				<input type="text" class="form-control" name="id"
+					placeholder="Enter Employee ID#"> <input type="submit"
+					class="btn btn-primary" value="Get Information!">
+			</div>
+		</form>
 
+		<table class="table table-striped table-hover">
+			<tr>
 				<th>Employee Id</th>
 				<th>Name</th>
 				<th>Job Title</th>
@@ -30,23 +32,18 @@
 					<c:forEach items="${employees}" var="employee">
 						<tr>
 							<td>${employee.employeeID}</td>
-							<td>${employee.firstName} ${employee.lastName}</td>
+							<td>${employee.firstName}${employee.lastName}</td>
 							<td>${employee.jobTitle}</td>
 							<td>${employee.departmentID}</td>
 							<td>${employee.supervisor}</td>
 							<td>${employee.status}</td>
-							<br>
-							
-	
 						<tr>
 					</c:forEach>
 				</c:if>
 		</table>
 	</div>
 
-<%@ include file="endBody.jsp"%>
-
-
+	<%@ include file="endBody.jsp"%>
 </body>
 <%@ include file="footer.jsp"%>
 
