@@ -49,10 +49,11 @@ body {
     background-color: #ecf035 !important;
 }
 
-#logo img {
+a#logo > img {
     height: 100%;
     padding: 5px 18px;
     width: auto;
+    border-radius: 50%;
 }
 
 #myNavbar {
@@ -188,10 +189,6 @@ body {
     text-align: right;
 }
 
-/* listEmployee */
-.listEmp {
-	height:95vh;
-}
 
 /* Contact */
 .contact {

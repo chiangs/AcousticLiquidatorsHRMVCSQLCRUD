@@ -6,10 +6,8 @@
 				data-target="#myNavbar">
 				<span class="icon-bar"></span> <span class="icon-bar"></span> <span
 					class="icon-bar"></span>
-			</button><h4>
-                    <a href="home.do">AL HR Management App</a>
-                </h4>
-
+			</button>
+			<a class="navbar-brand" id="logo" href="home.do"><img src="images/empListAllIcon.png" alt="AL HR Icon"></a>
 		</div>
 		<div class="collapse navbar-collapse" id="myNavbar">
 			<ul class="nav navbar-nav navbar-right">

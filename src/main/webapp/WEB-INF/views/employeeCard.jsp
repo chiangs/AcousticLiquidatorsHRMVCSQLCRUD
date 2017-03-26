@@ -7,30 +7,36 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>${employee.firstName }${employee.lastName }</title>
+<%@ include file="headStyles.jsp"%>
+<title>Employee Card View</title>
 </head>
 <body>
-	<h1>${employee.firstName} ${employee.lastName }</h1>
+	<%@ include file="navbar.jsp"%>
+
+	<h1 class="welcome">${employee.lastName}, ${employee.firstName}</h1>
 	<%-- ${employee} --%>
 	<c:if test="${! empty employee}">
 		<div class="empCard">
-			<table>
-				<th>ID</th>
-				<th>Name</th>
-				<th>DOB</th>
-				<th>Address ID</th>
-				<th>Job Title</th>
-				<th>Department ID</th>
-				<th>Supervisor</th>
-				<th>Salary Level</th>
-				<th>Store ID</th>
-				<th>Department ID</th>
-				<th>Hire Date</th>
-				<th>Email</th>
-				<th>Status</th>
+			<table class="table table-striped table-hover">
+				<tr>
+					<th>ID</th>
+					<th>Name</th>
+					<th>DOB</th>
+					<th>Address ID</th>
+					<th>Job Title</th>
+					<th>Department ID</th>
+					<th>Supervisor</th>
+					<th>Salary Level</th>
+					<th>Store ID</th>
+					<th>Department ID</th>
+					<th>Hire Date</th>
+					<th>Email</th>
+					<th>Status</th>
+					<th colspan="2">Actions</th>
+				</tr>
 				<tr>
 					<td>${employee.employeeID}</td>
-					<td>${employee.firstName}${employee.lastName}</td>
+					<td>${employee.firstName} ${employee.lastName}</td>
 					<td>${employee.dob}</td>
 					<td>${employee.address_id }</td>
 					<td>${employee.jobTitle}</td>
@@ -42,10 +48,23 @@
 					<td>${employee.hireDate}</td>
 					<td>${employee.email}</td>
 					<td>${employee.status}</td>
+					<td>
+		<form action="editPop.do" method="POST">
+		<button type="submit" value="${employee.employeeID}" name="id" class="btn btn-warning">Edit</button>
+		</form>
+		</td> 
+		<td>
+		<form action="deleteEmployee.do" method="POST">
+		<button type="submit" value="${employee.employeeID}" name="empObj" class="btn btn-danger">Delete</button>
+		</form>
+		</td>
 				</tr>
+				
 			</table>
 		</div>
 	</c:if>
-
+	<%@ include file="endBody.jsp"%>
 </body>
+<%@ include file="footer.jsp"%>
+
 </html>
