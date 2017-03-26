@@ -94,13 +94,13 @@ public class alController {
 //
 //	}
 
-	@RequestMapping(value = "addEmployee.do", method = RequestMethod.POST)
+	@RequestMapping(value = "update.do", method = RequestMethod.POST)
 	public ModelAndView addEmployee(Employee employee) {
 		ModelAndView mv = new ModelAndView();
-		mv.setViewName("addEmployee");
+		mv.setViewName("editEmployee");
 		Employee emp = dao.addEmployee(employee);
 		mv.addObject("newEmployee", emp);
-		return mv;
+		return getEmployeeById();
 	}
 
 	@RequestMapping(value = "deleteEmployee.do", method = RequestMethod.GET)

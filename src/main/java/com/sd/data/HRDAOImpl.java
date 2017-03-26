@@ -60,11 +60,10 @@ public class HRDAOImpl implements HRDAO {
 		int supervisor = newEmp.getSupervisor();
 		String hireDate = newEmp.getHireDate();
 		String email = newEmp.getEmail();
-		int status = newEmp.getStatus();
 		
 
 		String sql = "INSERT INTO employee (first_name, last_name, address_id, date_of_birth, job_title, salary_level, store_id, department_id, supervisor_id, hire_date, email, active_inactive) "
-				+ " VALUES (?,?,?,?,?,?,?,?,?,?,?,?)";
+				+ " VALUES (?,?,?,?,?,?,?,?,?,?,?)";
 
 		String sql2 = "SELECT LAST_INSERT_ID()";
 
@@ -82,9 +81,7 @@ public class HRDAOImpl implements HRDAO {
 			stmt.setInt(8, departmentID);
 			stmt.setInt(9, supervisor);
 			stmt.setString(10, hireDate);
-			stmt.setString(11, email);
-			stmt.setInt(12, status);
-			
+			stmt.setString(11, email);			
 
 			int uc = stmt.executeUpdate();
 			if (uc > 0) {

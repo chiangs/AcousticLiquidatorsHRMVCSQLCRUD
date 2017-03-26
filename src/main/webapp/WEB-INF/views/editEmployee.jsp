@@ -4,18 +4,20 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
+<%@ include file="headStyles.jsp"%>
+
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Employee Edit Page</title>
+<title>Employee Actions</title>
 </head>
 <body>
+	<%@ include file="navbar.jsp"%>
 
-<form action="addEmployee.do" method="POST">
-	<input type="submit"
-			value="Add Employee">
-			</form>
-			
-			
-		<div class="empListEdit">
+	<form action="addEmployee.do" method="POST">
+		<input type="submit" value="Add Employee">
+	</form>
+
+
+	<div class="empListEdit">
 		<table>
 			<tr>
 				<th>Employee Id</th>
@@ -31,12 +33,12 @@
 				<th>Hire Date</th>
 				<th>Email</th>
 				<th>Status</th>
-				
-		<c:if test="${! empty employees}">
-			<c:forEach items="${employees}" var="employee">
-				<tr>
+
+				<c:if test="${! empty employees}">
+					<c:forEach items="${employees}" var="employee">
+						<tr>
 							<td>${employee.employeeID}</td>
-							<td>${employee.firstName} ${employee.lastName}</td>
+							<td>${employee.firstName}${employee.lastName}</td>
 							<td>${employee.dob}</td>
 							<td>${employee.address_id }</td>
 							<td>${employee.jobTitle}</td>
@@ -48,26 +50,30 @@
 							<td>${employee.hireDate}</td>
 							<td>${employee.email}</td>
 							<td>${employee.status}</td>
-										
-		<td>
-		<form action="deleteEmployee.do" method="POST">
-		<button type="submit" value="${employee.employeeID}" name="empObj">Delete</button>
-		</form>
-		</td>
-		
-		
 
-		<td>
-		<form action="editPop.do" method="POST">
-		<button type="submit" value="${employee.employeeID}" name="id">Edit</button>
-		</form>
-		</td> 
-						 <tr>
+							<td>
+								<form action="deleteEmployee.do" method="POST">
+									<button type="submit" value="${employee.employeeID}"
+										name="empObj">Delete</button>
+								</form>
+							</td>
+
+
+
+							<td>
+								<form action="editPop.do" method="POST">
+									<button type="submit" value="${employee.employeeID}" name="id">Edit</button>
+								</form>
+							</td>
+						<tr>
 					</c:forEach>
 				</c:if>
 		</table>
 	</div>
+	<%@ include file="endBody.jsp"%>
 
 </body>
+<%@ include file="footer.jsp"%>
+
 </html>
 
