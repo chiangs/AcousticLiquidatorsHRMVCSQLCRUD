@@ -30,22 +30,22 @@
 		</form>
 		<br>
 
-	<c:if test="${! empty employees}">
+	<c:if test="${! empty employee}">
 		<form action="edit.do" method="POST">
-			<br> <input type="hidden" name="id" value="${employee.employeeID}">
-			First Name: <input type="text" name="title" value="${employee.firstName}"><br>
-			Last Name: <input type="text" name="description"value="${employee.lastName}"><br> 
+			<br> <input type="hidden" name="id" value="">
+			First Name: <input type="text" name="title" value=""><br>
+			Last Name: <input type="text" name="description"value=""><br> 
 			Address: <ul>
-			         <li>Street Address<input type="text" name="address" value="${employee.address }"></li>
-			         <li>City<input type="text" name="city" value="${employee.address }"></li>
-			         <li>State<input type="text" name="state" value="${employee.address }"></li>
-			         <li>Postal Code<input type="text" name="postal_code" value="${employee.address }"></li>
-			         <li>Country<input type="text" name="country_id" value="${employee.address }"></li>
-			         <li>Phone<input type="text" name="phone" value="${employee.address }"></li>
+			         <li>Street Address<input type="text" name="address" value=""></li>
+			         <li>City<input type="text" name="city" value=""></li>
+			         <li>State<input type="text" name="state" value=""></li>
+			         <li>Postal Code<input type="text" name="postal_code" value=""></li>
+			         <li>Country<input type="text" name="country_id" value=""></li>
+			         <li>Phone<input type="text" name="phone" value=""></li>
 			         </ul>
 			        
-			DOB: <input type="text" name="date_of_birth" value="${employee.dob}"><br>
-			Job Title: <input type="text" name="job_title" value="${employee.jobTitle}"><br>
+			DOB: <input type="text" name="date_of_birth" value=""><br>
+			Job Title: <input type="text" name="job_title" value=""><br>
 			Salary Level:<select name = "salaryLevel">
 			<option value ="6">$1,000,000 +</option>
 			<option value ="5">2.$90,000 +</option>
@@ -59,7 +59,7 @@
 			<option value ="2"> RiNo District Store</option>
 			</select>
 			Department:<select name = "department">
-			<option value ="1">Executive Member +</option>
+			<option value ="1">Executive Member</option>
 			<option value ="2">General Manager</option>
 			<option value ="3">Store Manager</option>
 			<option value ="4">Assistant Store Manager</option>
