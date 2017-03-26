@@ -51,9 +51,11 @@
 										
 		<td>
 		<form action="deleteEmployee.do" method="POST">
-		<button type="submit" value="${employee.employeeID}" name="id">Delete</button>
+		<button type="submit" value="${employee.employeeID}" name="empObj">Delete</button>
 		</form>
 		</td>
+		
+		
 
 		<td>
 		<form action="editPop.do" method="POST">
