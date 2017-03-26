@@ -40,6 +40,58 @@
 				placeholder="Enter Employee ID#"> <input type="submit"
 				class="btn btn-primary" value="Get Information!">
 		</form>
+		
+		<c:if test="${! empty employees}">
+		<form action="edit.do" method="POST">
+			<br> <input type="hidden" name="id" value="">
+			First Name: <input type="text" name="title" value=""><br>
+			Last Name: <input type="text" name="description"value=""><br> 
+			Address: <ul>
+			         <li>Street Address<input type="text" name="address" value=""></li>
+			         <li>City<input type="text" name="city" value=""></li>
+			         <li>State<input type="text" name="state" value=""></li>
+			         <li>Postal Code<input type="text" name="postal_code" value=""></li>
+			         <li>Country<input type="text" name="country_id" value=""></li>
+			         <li>Phone<input type="text" name="phone" value=""></li>
+			         </ul>
+			        
+			DOB: <input type="text" name="date_of_birth" value=""><br>
+			Job Title: <input type="text" name="job_title" value=""><br>
+			Salary Level:<select name = "salaryLevel">
+			<option value ="6">$1,000,000 +</option>
+			<option value ="5">2.$90,000 +</option>
+			<option value ="4">3.$60,000 +</option>
+			<option value ="3">4.$45,000 +</option>
+			<option value ="2">5.$35,000 +</option>
+			<option value ="1">5.$18,000 +</option>
+			</select> 
+			Store ID: <select name = "store_ID">
+			<option value ="1">Union Station Store</option>
+			<option value ="2"> RiNo District Store</option>
+			</select>
+			Department:<select name = "department">
+			<option value ="1">Executive Member</option>
+			<option value ="2">General Manager</option>
+			<option value ="3">Store Manager</option>
+			<option value ="4">Assistant Store Manager</option>
+			<option value ="5">Full Time Employee</option>
+			<option value ="6">Part Time Employee</option>
+			</select> 
+			Supervisor:<select name = "supervisor">
+			<option value ="6">Union Store Manager +</option>
+			<option value ="7">Union Assistant Manager</option>
+			<option value ="8">RiNo Store Manager</option>
+			<option value ="9">RiNo Assistant Manager</option>
+			</select>
+			Hire Date:<input type="text" name="hireDate"value=""><br>
+			Email:<input type="text" name="email"value=""><br>
+			Status:<select name = "status">
+			<option value ="1">Active</option>
+			<option value ="0">Inactive</option>
+			</select>
+			<button type="submit" value="submit">Submit!</button>
+		</form>
+	</c:if>
 
 	</div>
 
