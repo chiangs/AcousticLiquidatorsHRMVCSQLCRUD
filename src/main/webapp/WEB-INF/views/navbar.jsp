@@ -16,7 +16,7 @@
 				<li><a class="bold" href="home.do">home</a></li>
 				<li><a class="bold" href="listEmployeeInfo.do">list employees</a></li>
 				<li><a class="bold" href="edit.do">employee actions</a></li>
-				<li><a class="bold" href="contact.do">contact</a></li>
+				<li><a class="bold" href="contact.jsp">contact</a></li>
 			</ul>
 		</div>
 	</div>

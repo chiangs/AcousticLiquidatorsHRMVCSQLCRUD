@@ -156,14 +156,14 @@ public class HRDAOImpl implements HRDAO {
     }
 
 	@Override
-	public String deleteEmployee(Employee emp) {
+	public String deleteEmployee(int id) {
 		String response = null;
-        String sql = "DELETE FROM employee WHERE id = ?";
+        String sql = "DELETE FROM employee WHERE emp_id = ?";
 
         try {
             Connection conn = DriverManager.getConnection(url, user, pass);
             PreparedStatement stmt = conn.prepareStatement(sql);
-            stmt.setInt(1, emp.getEmployeeID());
+            stmt.setInt(1, id);
             int uc = stmt.executeUpdate();
             if (uc > 0 ) {
                 response = "Employee Deleted!";

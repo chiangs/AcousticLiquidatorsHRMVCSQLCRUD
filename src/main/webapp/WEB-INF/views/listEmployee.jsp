@@ -5,16 +5,12 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<%@ include file="headStyles.jsp"%>
 <title>AL Employee List</title>
 </head>
 <body>
-<!-- 	<a href="addEmployee.do">Add Employee</a>
- -->
+	<%@ include file="navbar.jsp"%>
 
-	 <!-- <form action="addEmployee.do" method="POST">
-	<input type="submit"
-			value="Add Employee">
-	</form> --> 
 	
 	<form action="getEmployeeInfo.do" method="GET">
 		<input type="text" name="id"> <input type="submit"
@@ -41,21 +37,17 @@
 							<td>${employee.status}</td>
 							<br>
 							
-							<%-- 	<form action="deleteEmployee.do" method="POST">
-			<button type="submit" value="${employee.employeeID}" name="id">Delete</button>
-		</form>
-
-		<form action="editPop.do" method="POST">
-			<button type="submit" value="${employee.employeeID}" name="id">Edit</button>
-		</form>
-		<br> --%>
+	
 						<tr>
 					</c:forEach>
 				</c:if>
 		</table>
 	</div>
 
+<%@ include file="endBody.jsp"%>
 
 
 </body>
+<%@ include file="footer.jsp"%>
+
 </html>
