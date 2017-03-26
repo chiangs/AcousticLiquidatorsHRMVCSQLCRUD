@@ -21,7 +21,7 @@
 		</div>
 		<div class="col-xs-4 col-sm-4 col-md-12">
 			<div class="icon">
-				<a href="edit.do"><img id="inv" src="images/empIcon.png"
+				<a href="editPop.do"><img id="inv" src="images/empIcon.png"
 					alt="employee actions button"></a>
 				<h4 class="text">Employee Actions (Add/Edit/Delete)</h4>
 			</div>
