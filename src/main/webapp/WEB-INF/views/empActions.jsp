@@ -35,28 +35,28 @@
 	<div class="col-xs-12 col-md-4 col-lg-4">
 		<h2>Edit Form</h2>
 
-		<form action="getEmployeeInfo.do" method="GET">
+		<form action="getEmployeeInfo2.do" method="POST">
 			<input type="text" class="form-control" name="id"
 				placeholder="Enter Employee ID#"> <input type="submit"
 				class="btn btn-primary" value="Get Information!">
 		</form>
 		
-		<c:if test="${! empty employees}">
-		<form action="edit.do" method="POST">
+		<c:if test="${! empty employee}">
+		<form action="update.do" method="POST">
 			<br> <input type="hidden" name="id" value="">
-			First Name: <input type="text" name="title" value=""><br>
-			Last Name: <input type="text" name="description"value=""><br> 
-			Address: <ul>
-			         <li>Street Address<input type="text" name="address" value=""></li>
-			         <li>City<input type="text" name="city" value=""></li>
-			         <li>State<input type="text" name="state" value=""></li>
-			         <li>Postal Code<input type="text" name="postal_code" value=""></li>
-			         <li>Country<input type="text" name="country_id" value=""></li>
-			         <li>Phone<input type="text" name="phone" value=""></li>
-			         </ul>
+			First Name: <input type="text" name="title" value="${employee.firstName}"><br>
+			Last Name: <input type="text" name="description"value="${employee.lastName}"><br> 
+			<%-- Address: <ul>
+			         <li>Street Address<input type="text" name="address" value="${employee.address}"></li>
+			         <li>City<input type="text" name="city" value="${employee.city}"></li>
+			         <li>State<input type="text" name="state" value="${employee.state}"></li>
+			         <li>Postal Code<input type="text" name="postal_code" value="${employee.postal_code"></li>
+			         <li>Country<input type="text" name="country_id" value="${employee.country}"></li>
+			         </ul> --%>
+			         Address id: <input type="text" name="address_id" value="${employee.address_id}"><br>
 			        
-			DOB: <input type="text" name="date_of_birth" value=""><br>
-			Job Title: <input type="text" name="job_title" value=""><br>
+			DOB: <input type="text" name="date_of_birth" value="${employee.dob}"><br>
+			Job Title: <input type="text" name="job_title" value="${employee.jobTitle}"><br>
 			Salary Level:<select name = "salaryLevel">
 			<option value ="6">$1,000,000 +</option>
 			<option value ="5">2.$90,000 +</option>

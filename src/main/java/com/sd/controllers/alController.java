@@ -48,6 +48,18 @@ public class alController {
 		mv.addObject("employee", emp);
 		return mv;
 	}
+	
+	// gets individ id returns to edit page
+	@RequestMapping(value = "getEmployeeInfo2.do", params = "id", method = RequestMethod.POST)
+	public ModelAndView getEmployeeById2(@RequestParam("id") int id) {
+		ModelAndView mv = new ModelAndView();
+		List<Employee> employees = dao.listEmployees();
+		Employee emp = dao.getEmployeeById(id);
+		mv.setViewName("empActions");
+		mv.addObject("employee", emp);
+		mv.addObject("employees", employees);
+		return mv;
+	}
 //
 //	@RequestMapping(value = "getEmployeeInfo.do", params = "name", method = RequestMethod.GET)
 //	public ModelAndView getByName(@RequestParam("name") String n) {
@@ -124,8 +136,8 @@ public class alController {
 	public ModelAndView addEmployee(Employee employee) {
 		ModelAndView mv = new ModelAndView();
 		mv.setViewName("editEmployee");
-		Employee emp = dao.addEmployee(employee);
-		mv.addObject("newEmployee", emp);
+		dao.updateEmployee(employee);
+		System.out.println(employee);
 		return getEmployeeById();
 	}
 
