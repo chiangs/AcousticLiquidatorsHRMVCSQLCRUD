@@ -15,9 +15,9 @@
 	<input type="submit"
 			value="Add Employee">
 	</form>
-	<form action="listEmployeeInfo.do" method="GET">
+	<form action="getEmployeeInfo.do" method="GET">
 		<input type="text" name="name"> <input type="submit"
-			value="Get Employee By Name">
+			value="Get Information By ID">
 	</form>
 	<div class="empList">
 		<table>

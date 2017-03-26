@@ -38,11 +38,21 @@ public class alController {
 		return mv;
 	}
 	
+	@RequestMapping(value = "edit.do", method = RequestMethod.GET)
+	public ModelAndView editEmployeeById(Employee employee) {
+		ModelAndView mv = new ModelAndView();
+		List<Employee> empList2 = dao.listEmployees();
+		dao.updateEmployee(employee);
+		mv.setViewName("editEmployee");
+		mv.addObject("employees", empList2);
+		return mv;
+	}
+	
 	@RequestMapping(value = "getEmployeeInfo.do", params = "id", method = RequestMethod.GET)
-	public ModelAndView getByID(@RequestParam("id") int id) {
+	public ModelAndView getEmployeeById(@RequestParam("id") int id) {
 		ModelAndView mv = new ModelAndView();
 		Employee emp = dao.getEmployeeById(id);
-		mv.setViewName("home");
+		mv.setViewName("employee.jsp");
 		mv.addObject("employee", emp);
 		return mv;
 	}
@@ -112,13 +122,5 @@ public class alController {
 //		return mv;
 //	}
 
-	@RequestMapping(value = "edit.do", method = RequestMethod.POST)
-	public ModelAndView editEmployee(Employee employee) {
-		ModelAndView mv = new ModelAndView();
-		dao.updateEmployee(employee);
-		mv.setViewName("editEmployee");
-		mv.addObject("employee", employee);
-		return mv;
-	}
 
 }

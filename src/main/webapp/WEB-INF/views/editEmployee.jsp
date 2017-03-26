@@ -5,34 +5,44 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Edit Current Employee</title>
+<title>Employee Edit Page</title>
 </head>
 <body>
-	 <c:if test="${! empty employee}">
-		<form action="edit.do" method="POST">
-			<br> 
-			<input type="hidden" name="id" value="${employee.id}">
-			First Name: <input type="text" name="firstName" value="${employee.firstName}"><br>
-			Last Name: <input type="text" name="lastName" value="${employee.lastName}"><br>
-			Address: <br> 
-			City: <input type="text" name="city"value="${employee.city}"><br> 
-			Country: <input type="text" name="country" value="${employee.country}"><br>
-			Phone Number: <input type="text" name="phone" value="${employee.phone}"><br>
-		    DOB: <input type="text" name="dob" value="${employee.dob}"><br>
-			Employee ID: <input type="text" name="empID" value="${employee.empId}"><br>
-			Job Title: <input type="text" name="length" value="${employee.jobTitle}"><br> 
-			Department: <input type="text" name="jobTitle" value="${employee.department}"><br> 
-			Supervisor: <input type="text" name="supervisor" value="${employee.supervisor}"><br> 
-			Hire Date: <input type="text" name="hireDate" value="${employee.hireDate}"><br> 
-			Employment Status: <input type="text" name="status" value="${employee.status}"><br> 
-			<select
-				name="status">
-				<option value="Active">G</option>
-				<option value="Inactive">PG</option>
-			</select> <br>
-			<button type="submit" value="submit">Submit!</button>
-		</form>
-	</c:if> 
+		<div class="empListEdit">
+		<table>
+			<tr>
+				<th>Employee Id</th>
+				<th>Name</th>
+				<th>Job Title</th>
+				<th>Department</th>
+				<th>Supervisor</th>
+				<th>Status</th>
+				
+				<c:if test="${! empty employees}">
+					<c:forEach items="${employees}" var="employee">
+						<tr>
+							<td>${employee.employeeID}</td>
+							<td>${employee.firstName} ${employee.lastName}</td>
+							<td>${employee.jobTitle}</td>
+							<td>${employee.departmentID}</td>
+							<td>${employee.supervisor}</td>
+							<td>${employee.status}</td>
+						
+							
+								<td><form action="deleteEmployee.do" method="POST">
+			<button type="submit" value="${employee.employeeID}" name="id">Delete</button>
+		</form></td>
+
+		<td><form action="editPop.do" method="POST">
+			<button type="submit" value="${employee.employeeID}" name="id">Edit</button>
+		</form></td>
+		<br> 
+						<tr>
+					</c:forEach>
+				</c:if>
+		</table>
+	</div>
+
 </body>
 </html>
 
