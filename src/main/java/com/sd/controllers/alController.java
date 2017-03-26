@@ -103,13 +103,23 @@ public class alController {
 		return mv;
 	}
 
-	@RequestMapping(value = "deleteEmployee.do", method = RequestMethod.POST)
-	public ModelAndView deleteEmployee(Employee employee) {
+	@RequestMapping(value = "deleteEmployee.do", method = RequestMethod.GET)
+	public ModelAndView deleteEmployee() {
 		ModelAndView mv = new ModelAndView();
-		mv.setViewName("home");
-		String response = dao.deleteEmployee(employee);
-		mv.addObject("response", response);
+		List<Employee> empList2 = dao.listEmployees();
+//		dao.updateEmployee(employee);
+		mv.setViewName("deleteEmp");
+		mv.addObject("employees", empList2);
 		return mv;
+	}
+	
+	@RequestMapping(value = "deleteEmployee.do", method = RequestMethod.POST)
+	public ModelAndView deleteEmployee(@RequestParam("empObj") int id) {
+		System.out.println(id);
+		ModelAndView mv = new ModelAndView();
+		String response = dao.deleteEmployee(id);
+		mv.addObject("response", response);
+		return getEmployeeById();
 	}
 
 //	@RequestMapping(value = "editPop.do", method = RequestMethod.POST)
