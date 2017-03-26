@@ -7,68 +7,80 @@
 <%@ include file="headStyles.jsp"%>
 
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Employee Actions</title>
+<title>${employee.lastName}, ${employee.firstName}</title>
 </head>
 <body>
 	<%@ include file="navbar.jsp"%>
 
-	<form action="addEmployee.do" method="POST">
-		<input type="submit" value="Add Employee">
-	</form>
 
-
+<h1>${employee.lastName}, ${employee.firstName}</h1>
 	<div class="empListEdit">
-		<table>
-			<tr>
-				<th>Employee Id</th>
-				<th>Name</th>
-				<th>DOB</th>
-				<th>Address ID</th>
-				<th>Job Title</th>
-				<th>Department</th>
-				<th>Supervisor</th>
-				<th>Salary Level</th>
-				<th>Store ID</th>
-				<th>Department ID</th>
-				<th>Hire Date</th>
-				<th>Email</th>
-				<th>Status</th>
-
-				<c:if test="${! empty employees}">
-					<c:forEach items="${employees}" var="employee">
-						<tr>
-							<td>${employee.employeeID}</td>
-							<td>${employee.firstName}${employee.lastName}</td>
-							<td>${employee.dob}</td>
-							<td>${employee.address_id }</td>
-							<td>${employee.jobTitle}</td>
-							<td>${employee.departmentID}</td>
-							<td>${employee.supervisor}</td>
-							<td>${employee.salaryLevel}</td>
-							<td>${employee.storeID}</td>
-							<td>${employee.departmentID}</td>
-							<td>${employee.hireDate}</td>
-							<td>${employee.email}</td>
-							<td>${employee.status}</td>
-
-							<td>
-								<form action="deleteEmployee.do" method="POST">
-									<button type="submit" value="${employee.employeeID}"
-										name="empObj">Delete</button>
-								</form>
-							</td>
 
 
+		<form action="getEmployeeInfo.do" method="GET">
+			<div class="form-group">
+				<input type="text" class="form-control" name="id"
+					placeholder="Enter Employee ID#"> <input type="submit"
+					class="btn btn-primary" value="Get Information!">
+			</div>
+		</form>
+		
+		<form action="editPop.do" method="POST">
+			<button type="submit" value="${employee.id}" name="id">Edit</button>
+		</form>
+		<br>
 
-							<td>
-								<form action="editPop.do" method="POST">
-									<button type="submit" value="${employee.employeeID}" name="id">Edit</button>
-								</form>
-							</td>
-						<tr>
-					</c:forEach>
-				</c:if>
-		</table>
+	<c:if test="${! empty employees}">
+		<form action="edit.do" method="POST">
+			<br> <input type="hidden" name="id" value="${employee.employeeID}">
+			First Name: <input type="text" name="title" value="${employee.firstName}"><br>
+			Last Name: <input type="text" name="description"value="${employee.lastName}"><br> 
+			Address: <ul>
+			         <li>Street Address<input type="text" name="address" value="${employee.address }"></li>
+			         <li>City<input type="text" name="city" value="${employee.address }"></li>
+			         <li>State<input type="text" name="state" value="${employee.address }"></li>
+			         <li>Postal Code<input type="text" name="postal_code" value="${employee.address }"></li>
+			         <li>Country<input type="text" name="country_id" value="${employee.address }"></li>
+			         <li>Phone<input type="text" name="phone" value="${employee.address }"></li>
+			         </ul>
+			        
+			DOB: <input type="text" name="date_of_birth" value="${employee.dob}"><br>
+			Job Title: <input type="text" name="job_title" value="${employee.jobTitle}"><br>
+			Salary Level:<select name = "salaryLevel">
+			<option value ="6">$1,000,000 +</option>
+			<option value ="5">2.$90,000 +</option>
+			<option value ="4">3.$60,000 +</option>
+			<option value ="3">4.$45,000 +</option>
+			<option value ="2">5.$35,000 +</option>
+			<option value ="1">5.$18,000 +</option>
+			</select> 
+			Store ID: <select name = "store_ID">
+			<option value ="1">Union Station Store</option>
+			<option value ="2"> RiNo District Store</option>
+			</select>
+			Department:<select name = "department">
+			<option value ="1">Executive Member +</option>
+			<option value ="2">General Manager</option>
+			<option value ="3">Store Manager</option>
+			<option value ="4">Assistant Store Manager</option>
+			<option value ="5">Full Time Employee</option>
+			<option value ="6">Part Time Employee</option>
+			</select> 
+			Supervisor:<select name = "supervisor">
+			<option value ="6">Union Store Manager +</option>
+			<option value ="7">Union Assistant Manager</option>
+			<option value ="8">RiNo Store Manager</option>
+			<option value ="9">RiNo Assistant Manager</option>
+			</select>
+			Hire Date:<input type="text" name="hireDate"value=""><br>
+			Email:<input type="text" name="email"value=""><br>
+			Status:<select name = "status">
+			<option value ="1">Active</option>
+			<option value ="0">Inactive</option>
+			</select>
+			<button type="submit" value="submit">Submit!</button>
+		</form>
+	</c:if>
 	</div>
 	<%@ include file="endBody.jsp"%>
 
