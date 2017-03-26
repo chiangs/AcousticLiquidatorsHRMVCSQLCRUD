@@ -42,7 +42,7 @@
 							<td>${employee.status}</td>
 							
 		<td>
-		<form action="editPop.do" method="GET">
+		<form action="getEmployeeInfo2.do" method="POST">
 		<button type="submit" value="${employee.employeeID}" name="id" class="btn btn-warning">Edit</button>
 		</form>
 		</td> 

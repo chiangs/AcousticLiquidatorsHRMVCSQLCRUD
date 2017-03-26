@@ -43,9 +43,9 @@
 		
 		<c:if test="${! empty employee}">
 		<form action="update.do" method="POST">
-			<br> <input type="hidden" name="id" value="">
-			First Name: <input type="text" name="title" value="${employee.firstName}"><br>
-			Last Name: <input type="text" name="description"value="${employee.lastName}"><br> 
+			<br> <input type="hidden" name="employeeID" value="${employee.employeeID }">
+			First Name: <input type="text" name="firstName" value="${employee.firstName}"><br>
+			Last Name: <input type="text" name="lastName"value="${employee.lastName}"><br> 
 			<%-- Address: <ul>
 			         <li>Street Address<input type="text" name="address" value="${employee.address}"></li>
 			         <li>City<input type="text" name="city" value="${employee.city}"></li>
@@ -55,8 +55,8 @@
 			         </ul> --%>
 			         Address id: <input type="text" name="address_id" value="${employee.address_id}"><br>
 			        
-			DOB: <input type="text" name="date_of_birth" value="${employee.dob}"><br>
-			Job Title: <input type="text" name="job_title" value="${employee.jobTitle}"><br>
+			DOB: <input type="text" name="dob" value="${employee.dob}"><br>
+			Job Title: <input type="text" name="jobTitle" value="${employee.jobTitle}"><br>
 			Salary Level:<select name = "salaryLevel">
 			<option value ="6">$1,000,000 +</option>
 			<option value ="5">2.$90,000 +</option>
@@ -65,11 +65,11 @@
 			<option value ="2">5.$35,000 +</option>
 			<option value ="1">5.$18,000 +</option>
 			</select> 
-			Store ID: <select name = "store_ID">
+			Store ID: <select name = "storeID">
 			<option value ="1">Union Station Store</option>
 			<option value ="2"> RiNo District Store</option>
 			</select>
-			Department:<select name = "department">
+			Department:<select name = "departmentID">
 			<option value ="1">Executive Member</option>
 			<option value ="2">General Manager</option>
 			<option value ="3">Store Manager</option>
