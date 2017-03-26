@@ -23,20 +23,35 @@
 		<table class="table table-striped table-hover">
 			<tr>
 				<th>Employee Id</th>
-				<th>Name</th>
 				<th>Job Title</th>
+				<th>First Name</th>
+				<th>Last Name</th>
 				<th>Department</th>
 				<th>Supervisor</th>
 				<th>Status</th>
+				<th colspan="2">Actions</th>
 				<c:if test="${! empty employees}">
 					<c:forEach items="${employees}" var="employee">
 						<tr>
 							<td>${employee.employeeID}</td>
-							<td>${employee.firstName}${employee.lastName}</td>
 							<td>${employee.jobTitle}</td>
+							<td>${employee.firstName}</td>
+							<td>${employee.lastName}</td>
 							<td>${employee.departmentID}</td>
 							<td>${employee.supervisor}</td>
 							<td>${employee.status}</td>
+							
+		<td>
+		<form action="editPop.do" method="POST">
+		<button type="submit" value="${employee.employeeID}" name="id" class="btn btn-warning">Edit</button>
+		</form>
+		</td> 
+		<td>
+		<form action="deleteEmployee.do" method="POST">
+		<button type="submit" value="${employee.employeeID}" name="empObj" class="btn btn-danger">Delete</button>
+		</form>
+		</td>
+	
 						<tr>
 					</c:forEach>
 				</c:if>

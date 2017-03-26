@@ -52,7 +52,7 @@ public class alController {
 	public ModelAndView getEmployeeById(@RequestParam("id") int id) {
 		ModelAndView mv = new ModelAndView();
 		Employee emp = dao.getEmployeeById(id);
-		mv.setViewName("employee");
+		mv.setViewName("employeeCard");
 		mv.addObject("employee", emp);
 		return mv;
 	}

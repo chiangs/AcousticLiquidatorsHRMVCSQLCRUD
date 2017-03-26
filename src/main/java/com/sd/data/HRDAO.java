@@ -6,7 +6,7 @@ public interface HRDAO {
 	 	Employee getEmployeeById(int id);
 //	 	Employee getEmployeeByNameContains(Employee emp);
 	 	Employee addEmployee(Employee newEmp);
-		Employee updateEmployee(Employee emp);
+		Employee updateEmployee(int id);
 		String deleteEmployee(int id);
 		List<Employee> listEmployees();
 		List<Employee> listEmployeesActiveOnly();
