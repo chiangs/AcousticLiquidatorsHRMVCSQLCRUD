@@ -11,12 +11,13 @@
 <!-- 	<a href="addEmployee.do">Add Employee</a>
  -->
 
-	<form action="addEmployee.do" method="POST">
+	 <!-- <form action="addEmployee.do" method="POST">
 	<input type="submit"
 			value="Add Employee">
-	</form>
+	</form> --> 
+	
 	<form action="getEmployeeInfo.do" method="GET">
-		<input type="text" name="name"> <input type="submit"
+		<input type="text" name="id"> <input type="submit"
 			value="Get Information By ID">
 	</form>
 	<div class="empList">

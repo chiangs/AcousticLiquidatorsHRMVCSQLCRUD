@@ -25,7 +25,7 @@ public class HRDAOImpl implements HRDAO {
 	public Employee getEmployeeById(int id) {
 		Employee emp = null;
 		
-		String sql = "Select emp_id, first_name, last_name, address_id, date_of_birth, job_title, salary_level, store_id, department_id, supervisor_id, hire_date, email, active_inactive FROM employee WHERE id = ?";
+		String sql = "Select emp_id, first_name, last_name, address_id, date_of_birth, job_title, salary_level, store_id, department_id, supervisor_id, hire_date, email, active_inactive FROM employee WHERE emp_id = ?";
 				try {
 					Connection conn = DriverManager.getConnection(url, user, pass);
 					PreparedStatement stmt = conn.prepareStatement(sql);
