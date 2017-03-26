@@ -29,6 +29,7 @@ public class alController {
 		return ("contact");
 	}
 	
+	// get list of all employees
 	@RequestMapping(value = "listEmployeeInfo.do", method = RequestMethod.GET)
 	public ModelAndView getEmployeeById(){
 		ModelAndView mv = new ModelAndView();
@@ -38,16 +39,7 @@ public class alController {
 		return mv;
 	}
 	
-	@RequestMapping(value = "edit.do", method = RequestMethod.GET)
-	public ModelAndView editEmployeeById(Employee employee) {
-		ModelAndView mv = new ModelAndView();
-		List<Employee> empList2 = dao.listEmployees();
-		dao.updateEmployee(employee);
-		mv.setViewName("editEmployee");
-		mv.addObject("employees", empList2);
-		return mv;
-	}
-	
+	// gets individual employee by ID
 	@RequestMapping(value = "getEmployeeInfo.do", params = "id", method = RequestMethod.GET)
 	public ModelAndView getEmployeeById(@RequestParam("id") int id) {
 		ModelAndView mv = new ModelAndView();
@@ -94,25 +86,9 @@ public class alController {
 //
 //	}
 
-	@RequestMapping(value = "update.do", method = RequestMethod.POST)
-	public ModelAndView addEmployee(Employee employee) {
-		ModelAndView mv = new ModelAndView();
-		mv.setViewName("editEmployee");
-		Employee emp = dao.addEmployee(employee);
-		mv.addObject("newEmployee", emp);
-		return getEmployeeById();
-	}
-
-	@RequestMapping(value = "deleteEmployee.do", method = RequestMethod.GET)
-	public ModelAndView deleteEmployee() {
-		ModelAndView mv = new ModelAndView();
-		List<Employee> empList2 = dao.listEmployees();
-//		dao.updateEmployee(employee);
-		mv.setViewName("deleteEmp");
-		mv.addObject("employees", empList2);
-		return mv;
-	}
 	
+	
+	// deletes employee via button
 	@RequestMapping(value = "deleteEmployee.do", method = RequestMethod.POST)
 	public ModelAndView deleteEmployee(@RequestParam("empObj") int id) {
 		System.out.println(id);
@@ -122,15 +98,25 @@ public class alController {
 		return getEmployeeById();
 	}
 
-//	@RequestMapping(value = "editPop.do", method = RequestMethod.POST)
-//	public ModelAndView editPopFilm(Employee employee) {
-//		ModelAndView mv = new ModelAndView();
-//		System.out.println(id);
-//		Employee emp = dao.getEmployeeByID2(employee);
-//		mv.setViewName("home");
-//		mv.addObject("editEmployee", emp);
-//		return mv;
-//	}
+	// populates the edit form for editing on empActions.jsp
+	@RequestMapping(value = "editPop.do", method = RequestMethod.POST)
+	public ModelAndView editPopFilm(int id) {
+		ModelAndView mv = new ModelAndView();
+		Employee emp = dao.getEmployeeById(id);
+		mv.setViewName("empActions");
+		mv.addObject("editEmployee", emp);
+		return mv;
+	}
+	
+	// Actual editing/updating of employee
+	@RequestMapping(value = "update.do", method = RequestMethod.POST)
+	public ModelAndView addEmployee(Employee employee) {
+		ModelAndView mv = new ModelAndView();
+		mv.setViewName("editEmployee");
+		Employee emp = dao.addEmployee(employee);
+		mv.addObject("newEmployee", emp);
+		return getEmployeeById();
+	}
 
 
 }

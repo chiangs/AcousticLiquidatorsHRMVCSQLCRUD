@@ -100,7 +100,7 @@ public class HRDAOImpl implements HRDAO {
 	}
 
 	@Override
-	public Employee updateEmployee(int id) {
+	public Employee updateEmployee(Employee emp) {
 		
 		String firstName = emp.getFirstName();
 		String lastName = emp.getLastName();
