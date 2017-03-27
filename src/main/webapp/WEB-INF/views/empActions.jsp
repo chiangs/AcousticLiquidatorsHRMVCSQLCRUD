@@ -11,122 +11,130 @@
 </head>
 <body>
 	<%@ include file="navbar.jsp"%>
-	<!-- Add Form -->
-	<div class="col-xs-12 col-md-4 col-lg-4">
-		<form action="addEmployee.do" method="POST">
-			<h2>Add Form</h2>
-			<hr>
-			First Name: <input type="text" name="firstName"><br>
-			Last Name: <input type="text" name="lastName"><br>
-			Address:<br> Street:<input type="text" name="street"><br>
-			DOB: <input type="text" name="dob"><br> Job Title: <input
-				type="text" name="jobTitle"><br> Salary Level: <input
-				type="text" name="salaryLevel"><br> Department ID: <input
-				type="text" name="departmentID"><br> Supervisor: <input
-				type="text" name="supervisor"><br> Hire Date: <input
-				type="text" name="hireDate"><br> Email: <input
-				type="text" name="email"><br>
-			<!--  <button type="submit" value="submit">Submit!</button>-->
-			<button type="submit" value="submit" class="btn btn-primary">Add!</button>
-		</form>
-	</div>
+	<div class="container-fluid">
 
-	<!-- Edit Form -->
-	<div class="col-xs-12 col-md-4 col-lg-4">
-		<h2>Edit Form</h2>
+		<!-- Add Form -->
+		<div class="formContent">
+			<div class="row">
+				<div class="col-xs-12 col-md-4 col-lg-4">
+				<div class="well">
+					<form action="addEmployee.do" method="POST">
+						<h2>Add Form</h2>
+						<hr>
+						First Name: <input class="form-control" type="text" name="firstName"><br>
+						Last Name: <input class="form-control" type="text" name="lastName"><br>
+						Street:<input class="form-control" type="text" name="street"><br>
+						DOB: <input class="form-control" type="text" name="dob"><br> Job Title: <input class="form-control" 
+							type="text" name="jobTitle"><br> Salary Level: <input class="form-control" 
+							type="text" name="salaryLevel"><br> Department ID: <input class="form-control" 
+							type="text" name="departmentID"><br> Supervisor: <input class="form-control" 
+							type="text" name="supervisor"><br> Hire Date: <input class="form-control" 
+							type="text" name="hireDate"><br> Email: <input class="form-control" 
+							type="text" name="email"><br>
+						<!--  <button type="submit" value="submit">Submit!</button>-->
+						<button type="submit" value="submit" class="btn btn-primary">Add!</button>
+					</form>
+				</div>
+				</div>
 
-		<form action="getEmployeeInfo2.do" method="POST">
-			<input type="text" class="form-control" name="id"
-				placeholder="Enter Employee ID#"> <input type="submit"
-				class="btn btn-primary" value="Get Information!">
-		</form>
+				<!-- Edit Form -->
+				<div class="col-xs-12 col-md-4 col-lg-4">
+				<div class="well">
+					<h2>Edit Form</h2>
 
-		<c:if test="${! empty employee}">
-			<form action="update.do" method="POST">
-				<br> <input type="hidden" name="employeeID"
-					value="${employee.employeeID }"> First Name: <input
-					type="text" name="firstName" value="${employee.firstName}"><br>
-				Last Name: <input type="text" name="lastName"
-					value="${employee.lastName}">
-				<input type="hidden" name="address_id"
-					value="${employee.address.id}"><br> 
-					DOB: <input type="text" name="dob" value="${employee.dob}">
-					<br>
-				Job Title: <input type="text" name="jobTitle"
-					value="${employee.jobTitle}"><br>
-					 Salary Level:<select
-					name="salaryLevel" value="${employee.salaryLevel}">
-					<option value="6">$1,000,000 +</option>
-					<option value="5">$90,000 +</option>
-					<option value="4">$60,000 +</option>
-					<option value="3">$45,000 +</option>
-					<option value="2">$35,000 +</option>
-					<option value="1">$18,000 +</option>
-				</select> <br>
-				Store ID: <select name="storeID">
-					<option value="1">Union Station Store</option>
-					<option value="2">RiNo District Store</option>
-				</select><br>
-				 Department:<select name="departmentID">
-					<option value="1">Executive Member</option>
-					<option value="2">General Manager</option>
-					<option value="3">Store Manager</option>
-					<option value="4">Assistant Store Manager</option>
-					<option value="5">Full Time Employee</option>
-					<option value="6">Part Time Employee</option>
-				</select><br> 
-				Supervisor:<select name="supervisor">
-					<option value="6">Union Store Manager </option>
-					<option value="7">Union Assistant Manager</option>
-					<option value="8">RiNo Store Manager</option>
-					<option value="9">RiNo Assistant Manager</option>
-				</select><br> 
-				Hire Date:<input type="text" name="hireDate" value=""><br>
-				Email:<input type="text" name="email" value=""><br>
-				Status:<select name="status">
-					<option value="1">Active</option>
-					<option value="0">Inactive</option>
-				</select>
-				<button type="submit" value="submit">Submit!</button>
-			</form>
-			<form action="updateAddress.do" method="POST">
-				Address:
-				<ul>
-					<li><input type="hidden" name="id"
-						value="${employee.address.id}"></li>
-					<li>Street Address<input type="text" name="address"
-						value="${employee.address.address}"></li>
-					<li>City<input type="text" name="city"
-						value="${employee.address.city}"></li>
-					<li>State<input type="text" name="state_province"
-						value="${employee.address.state_province}"></li>
-					<li>Postal Code<input type="text" name="postal_code"
-						value="${employee.address.postal_code}"></li>
-					<li>Country<input type="text" name="country_id"
-						value="${employee.address.country_id}"></li>
-				</ul>
+					<form action="getEmployeeInfo2.do" method="POST">
+						<input type="text" class="form-control" name="id"
+							placeholder="Enter Employee ID#"> <input type="submit"
+							class="btn btn-primary" value="Get Information!">
+					</form>
 
-				<button type="submit" value="submit">Submit!</button>
-			</form>
-		</c:if>
+					<c:if test="${! empty employee}">
+						<form action="update.do" method="POST">
+							<br> <input type="hidden" name="employeeID"
+								value="${employee.employeeID }"> 
+								First Name: <input class="form-control"	type="text" name="firstName" value="${employee.firstName}"><br>
+								Last Name: <input class="form-control" type="text" name="lastName"
+								value="${employee.lastName}"> 
+								<input type="hidden" name="address_id" value="${employee.address.id}"><br>
+								DOB: <input class="form-control" type="text" name="dob" value="${employee.dob}"><br> 
+								Job Title: <input class="form-control" type="text" name="jobTitle"
+								value="${employee.jobTitle}"><br> 
+								Salary Level:<select class="form-control" 
+								name="salaryLevel" value="${employee.salaryLevel}">
+								<option value="6">$1,000,000 +</option>
+								<option value="5">$90,000 +</option>
+								<option value="4">$60,000 +</option>
+								<option value="3">$45,000 +</option>
+								<option value="2">$35,000 +</option>
+								<option value="1">$18,000 +</option>
+							</select> <br> Store ID: <select class="form-control" name="storeID">
+								<option value="1">Union Station Store</option>
+								<option value="2">RiNo District Store</option>
+							</select><br> Department:<select class="form-control" name="departmentID">
+								<option value="1">Executive Member</option>
+								<option value="2">General Manager</option>
+								<option value="3">Store Manager</option>
+								<option value="4">Assistant Store Manager</option>
+								<option value="5">Full Time Employee</option>
+								<option value="6">Part Time Employee</option>
+							</select><br> Supervisor:<select class="form-control" name="supervisor">
+								<option value="6">Union Store Manager</option>
+								<option value="7">Union Assistant Manager</option>
+								<option value="8">RiNo Store Manager</option>
+								<option value="9">RiNo Assistant Manager</option>
+							</select><br> Hire Date:<input class="form-control" type="text" name="hireDate" value=""><br>
+							Email:<input class="form-control" type="text" name="email" value=""><br>
+							Status:<select class="form-control" name="status">
+								<option value="1">Active</option>
+								<option value="0">Inactive</option>
+							</select>
+							<button type="submit" value="submit" class="btn btn-warning">Submit!</button>
+						</form>
+						<br>
+						
+						<form action="updateAddress.do" method="POST">
+							Address:
+								<input class="form-control" type="hidden" name="id"
+									value="${employee.address.id}">
+								Street Address<input class="form-control" type="text" name="address"
+									value="${employee.address.address}">
+								City<input class="form-control" type="text" name="city"
+									value="${employee.address.city}">
+								State<input class="form-control" type="text" name="state_province"
+									value="${employee.address.state_province}">
+								Postal Code<input class="form-control" type="text" name="postal_code"
+									value="${employee.address.postal_code}">
+								Country<input class="form-control" type="text" name="country_id"
+									value="${employee.address.country_id}">
+							<button type="submit" value="submit" class="btn btn-warning" >Submit!</button>
+						</form>
+					</c:if>
 
-	</div>
-
+				</div>
+				</div>
 
 
-	<!-- Delete Form -->
-	<div class="col-xs-12 col-md-4 col-lg-4">
-		<h2>Delete Form</h2>
-		<form action="deleteEmployee.do" method="POST">
-			<select name="empObj">
-				<c:forEach var="item" items="${employees}">
-					<option value="${item.employeeID}">${item.employeeID}-
-						${item.firstName} ${item.lastName}</option>
-				</c:forEach>
-			</select>
-			<button type="submit" value="${item.employeeID}" name="empObj2"
-				class="btn btn-danger">Delete</button>
-		</form>
+				<!-- Delete Form -->
+				<div class="col-xs-12 col-md-4 col-lg-4">
+				<div class="well">
+					<div class="deleteForm">
+						<h2>Delete Form</h2>
+						<form action="deleteEmployee.do" method="POST">
+							<select class="form-control" name="empObj">
+								<c:forEach var="item" items="${employees}">
+									<option value="${item.employeeID}">${item.employeeID}-
+										${item.firstName} ${item.lastName}</option>
+								</c:forEach>
+							</select>
+							<button type="submit" value="${item.employeeID}" name="empObj2"
+								class="btn btn-danger">Delete</button>
+							<br>
+						</form>
+					</div>
+				</div>
+				</div>
+			</div>
+		</div>
 	</div>
 	<%@ include file="endBody.jsp"%>
 

@@ -65,7 +65,6 @@ public class alController {
 	// deletes employee via button
 	@RequestMapping(value = "deleteEmployee.do", method = RequestMethod.POST)
 	public ModelAndView deleteEmployee(@RequestParam("empObj") int id) {
-		System.out.println(id);
 		ModelAndView mv = new ModelAndView();
 		String response = dao.deleteEmployee(id);
 		mv.addObject("response", response);
@@ -90,7 +89,7 @@ public class alController {
 		Employee emp = dao.addEmployee(e);
 		mv.setViewName("listEmployee");
 		mv.addObject("editEmployee", emp);
-		return mv;
+		return getEmployeeById();
 	}
 	
 	// Actual editing/updating of employee

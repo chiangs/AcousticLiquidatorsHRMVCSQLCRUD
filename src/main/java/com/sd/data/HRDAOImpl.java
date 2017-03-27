@@ -74,11 +74,7 @@ public class HRDAOImpl implements HRDAO {
 
 			stmt.setString(1, firstName);
 			stmt.setString(2, lastName);
-<<<<<<< HEAD
 			stmt.setInt(3, 1);
-=======
-			stmt.setInt(3, address.getId());
->>>>>>> c4e0bb70b8833ebfc5ec4c8185a0c5e2234d7721
 			stmt.setString(4, dob);
 			stmt.setString(5, jobTitle);
 			stmt.setInt(6, salaryLevel);

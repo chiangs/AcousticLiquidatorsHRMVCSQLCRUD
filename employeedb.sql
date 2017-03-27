@@ -34,7 +34,7 @@ ENGINE = InnoDB;
 DROP TABLE IF EXISTS `address` ;
 
 CREATE TABLE IF NOT EXISTS `address` (
-  `id` INT(2) NOT NULL,
+  `id` INT(2) NOT NULL AUTO_INCREMENT,
   `address` VARCHAR(45) NULL,
   `city` VARCHAR(45) NULL,
   `state_province` VARCHAR(45) NULL,
@@ -119,7 +119,7 @@ ENGINE = InnoDB;
 DROP TABLE IF EXISTS `employee` ;
 
 CREATE TABLE IF NOT EXISTS `employee` (
-  `emp_id` INT(2) NOT NULL,
+  `emp_id` INT(2) NOT NULL AUTO_INCREMENT, 
   `first_name` CHAR(20) NOT NULL,
   `last_name` CHAR(20) NOT NULL,
   `address_id` INT(2) NULL,
@@ -131,7 +131,7 @@ CREATE TABLE IF NOT EXISTS `employee` (
   `supervisor_id` INT(2) NULL,
   `hire_date` VARCHAR(45) NULL,
   `email` VARCHAR(45) NULL,
-  `active_inactive` INT(1) NOT NULL,
+  `active_inactive` INT(1) NOT NULL DEFAULT 1,
   PRIMARY KEY (`emp_id`),
   INDEX `id_idx` (`address_id` ASC),
   INDEX `level_idx` (`salary_level` ASC),

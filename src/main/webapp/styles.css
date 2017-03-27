@@ -15,6 +15,7 @@ body {
     padding: 50px 0 0 0;
 }
 
+
 .bold {
     font-weight: bold;
     text-align: center;
@@ -189,7 +190,6 @@ a#logo > img {
     text-align: right;
 }
 
-
 /* Contact */
 .contact {
 	text-align:left;
@@ -200,6 +200,7 @@ a#logo > img {
 .contact a {
 		text-decoration: none;
 }
+
 
 
 /* Footer */
