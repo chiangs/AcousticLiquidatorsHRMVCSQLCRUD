@@ -38,7 +38,7 @@ If more time were available:
 - The **alController** provides information back through **.jsp** files for the user to view and manipulate.
 
 <p align="center">
-<img src="" height="350">
+<img src="src/main/webapp/images/scrn5.png" height="350">
 </p>
 
 ## Code Examples
