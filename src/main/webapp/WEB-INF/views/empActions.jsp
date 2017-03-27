@@ -47,36 +47,41 @@
 					value="${employee.employeeID }"> First Name: <input
 					type="text" name="firstName" value="${employee.firstName}"><br>
 				Last Name: <input type="text" name="lastName"
-					value="${employee.lastName}"><br>
-				
-				Address id: <input type="text" name="address_id"
-					value="${employee.address.id}"><br> DOB: <input
-					type="text" name="dob" value="${employee.dob}"><br>
+					value="${employee.lastName}">
+				<input type="hidden" name="address_id"
+					value="${employee.address.id}"><br> 
+					DOB: <input type="text" name="dob" value="${employee.dob}">
+					<br>
 				Job Title: <input type="text" name="jobTitle"
-					value="${employee.jobTitle}"><br> Salary Level:<select
-					name="salaryLevel">
+					value="${employee.jobTitle}"><br>
+					 Salary Level:<select
+					name="salaryLevel" value="${employee.salaryLevel}">
 					<option value="6">$1,000,000 +</option>
-					<option value="5">2.$90,000 +</option>
-					<option value="4">3.$60,000 +</option>
-					<option value="3">4.$45,000 +</option>
-					<option value="2">5.$35,000 +</option>
-					<option value="1">5.$18,000 +</option>
-				</select> Store ID: <select name="storeID">
+					<option value="5">$90,000 +</option>
+					<option value="4">$60,000 +</option>
+					<option value="3">$45,000 +</option>
+					<option value="2">$35,000 +</option>
+					<option value="1">$18,000 +</option>
+				</select> <br>
+				Store ID: <select name="storeID">
 					<option value="1">Union Station Store</option>
 					<option value="2">RiNo District Store</option>
-				</select> Department:<select name="departmentID">
+				</select><br>
+				 Department:<select name="departmentID">
 					<option value="1">Executive Member</option>
 					<option value="2">General Manager</option>
 					<option value="3">Store Manager</option>
 					<option value="4">Assistant Store Manager</option>
 					<option value="5">Full Time Employee</option>
 					<option value="6">Part Time Employee</option>
-				</select> Supervisor:<select name="supervisor">
-					<option value="6">Union Store Manager +</option>
+				</select><br> 
+				Supervisor:<select name="supervisor">
+					<option value="6">Union Store Manager </option>
 					<option value="7">Union Assistant Manager</option>
 					<option value="8">RiNo Store Manager</option>
 					<option value="9">RiNo Assistant Manager</option>
-				</select> Hire Date:<input type="text" name="hireDate" value=""><br>
+				</select><br> 
+				Hire Date:<input type="text" name="hireDate" value=""><br>
 				Email:<input type="text" name="email" value=""><br>
 				Status:<select name="status">
 					<option value="1">Active</option>
