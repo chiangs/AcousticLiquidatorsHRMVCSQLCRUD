@@ -47,12 +47,12 @@
 			DOB: <input type="text" name="date_of_birth" value=""><br>
 			Job Title: <input type="text" name="job_title" value=""><br>
 			Salary Level:<select name = "salaryLevel">
-			<option value ="6">$1,000,000 +</option>
-			<option value ="5">2.$90,000 +</option>
-			<option value ="4">3.$60,000 +</option>
-			<option value ="3">4.$45,000 +</option>
-			<option value ="2">5.$35,000 +</option>
-			<option value ="1">5.$18,000 +</option>
+			<option value ="6">$1,000,000 + </option>
+			<option value ="5">2.$90,000 + </option>
+			<option value ="4">3.$60,000 + </option>
+			<option value ="3">4.$45,000 + </option>
+			<option value ="2">5.$35,000 + </option>
+			<option value ="1">5.$18,000 + </option>
 			</select> 
 			Store ID: <select name = "store_ID">
 			<option value ="1">Union Station Store</option>

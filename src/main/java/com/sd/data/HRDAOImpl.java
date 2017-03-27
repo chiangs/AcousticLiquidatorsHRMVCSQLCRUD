@@ -25,17 +25,21 @@ public class HRDAOImpl implements HRDAO {
 	public Employee getEmployeeById(int id) {
 		Employee emp = null;
 		
-		String sql = "Select emp_id, first_name, last_name, address_id, date_of_birth, job_title, salary_level, store_id, department_id, supervisor_id, hire_date, email, active_inactive FROM employee WHERE emp_id = ?";
+		String sql = "SELECT * FROM employee e JOIN address a ON e.address_id = a.id"
+				+ " JOIN salary sal ON e.salary_level=sal.level"
+				+ " JOIN store sto ON e.store_id = sto.id"
+				+ " JOIN department dep ON dep.department_id = e.department_id WHERE e.emp_id = ?";
 				try {
 					Connection conn = DriverManager.getConnection(url, user, pass);
 					PreparedStatement stmt = conn.prepareStatement(sql);
 					stmt.setInt(1, id);
 					ResultSet rs = stmt.executeQuery();
-
 					if (rs.next()) {
-						emp = new Employee(rs.getInt(1), rs.getString(2), rs.getString(3), rs.getInt(4), rs.getString(5), 
+						Address a = new Address(rs.getInt(14), rs.getString(15), rs.getString(16), rs.getString(17), rs.getInt(18), rs.getString(19));
+						emp = new Employee(rs.getInt(1), rs.getString(2), rs.getString(3), a, rs.getString(5), 
 								rs.getString(6), rs.getInt(7), rs.getInt(8), rs.getInt(9), rs.getInt(10), rs.getString(11),
 								rs.getString(12), rs.getInt(13)); 
+						
 					}
 					rs.close();
 					stmt.close();
@@ -51,7 +55,7 @@ public class HRDAOImpl implements HRDAO {
 
 		String firstName = newEmp.getFirstName();
 		String lastName = newEmp.getLastName();
-		int address_id = newEmp.getAddress_id();
+		Address address = newEmp.getAddress();
 		String dob = newEmp.getDob();
 		String jobTitle = newEmp.getJobTitle();
 		int salaryLevel = newEmp.getSalaryLevel();
@@ -63,10 +67,6 @@ public class HRDAOImpl implements HRDAO {
 
 		String sql = "INSERT INTO employee (first_name, last_name, address_id, date_of_birth, job_title, salary_level, store_id, department_id, supervisor_id, hire_date, email, active_inactive) "
 				+ " VALUES (?,?,?,?,?,?,?,?,?,?,?)";
-
-//		String sql2 = "SELECT LAST_INSERT_ID()";
-
-		
 		
 		try {
 			Connection conn = DriverManager.getConnection(url, user, pass);
@@ -74,7 +74,7 @@ public class HRDAOImpl implements HRDAO {
 
 			stmt.setString(1, firstName);
 			stmt.setString(2, lastName);
-			stmt.setInt(3, address_id);
+			stmt.setInt(3, address.getId());
 			stmt.setString(4, dob);
 			stmt.setString(5, jobTitle);
 			stmt.setInt(6, salaryLevel);
@@ -87,10 +87,6 @@ public class HRDAOImpl implements HRDAO {
 			int uc = stmt.executeUpdate();
 			if (uc > 0) {
 				return newEmp;
-//				ResultSet rs = stmt.executeQuery(sql2); // or stmt.getGeneratedKeys();
-//				if (rs.next()) {
-//					newEmp.setEmployeeID(rs.getInt(1));
-//				}
 			}
 			stmt.close();
 			conn.close();
@@ -107,7 +103,7 @@ public class HRDAOImpl implements HRDAO {
 
 		String firstName = emp.getFirstName();
 		String lastName = emp.getLastName();
-		int address_id = emp.getAddress_id();
+		Address address = emp.getAddress();
 		String dob = emp.getDob();
 		String jobTitle = emp.getJobTitle();
 		int salaryLevel = emp.getSalaryLevel();
@@ -131,7 +127,7 @@ public class HRDAOImpl implements HRDAO {
 
             stmt.setString(1, firstName);
 			stmt.setString(2, lastName);
-			stmt.setInt(3, address_id);
+			stmt.setInt(3, address.getId());
 			stmt.setString(4, dob);
 			stmt.setString(5, jobTitle);
 			stmt.setInt(6, salaryLevel);
@@ -184,47 +180,21 @@ public class HRDAOImpl implements HRDAO {
 	public List<Employee> listEmployees() {
 		List<Employee> empList = new ArrayList<>();
 		Employee emp = null;
-        String sql = "SELECT * FROM employee";
-        try {
-			Connection conn = DriverManager.getConnection(url, user, pass);
-			PreparedStatement stmt = conn.prepareStatement(sql);
-			ResultSet rs = stmt.executeQuery();
-
-			while (rs.next()) {
-				emp = new Employee(rs.getInt(1), rs.getString(2), rs.getString(3), rs.getInt(4), rs.getString(5), 
-						rs.getString(6), rs.getInt(7), rs.getInt(8), rs.getInt(9), rs.getInt(10), rs.getString(11),
-						rs.getString(12), rs.getInt(13));
-				empList.add(emp);
-
-			}
-
-			rs.close();
-			stmt.close();
-			conn.close();
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-		return empList;
-	}
-	
-	@Override
-	public List<Employee> listEmployeesActiveOnly() {
-		List<Employee> empList = new ArrayList<>();
-		Employee emp = null;
-		String sql = "SELECT * FROM employee WHERE active = 1";
-		try {
-			Connection conn = DriverManager.getConnection(url, user, pass);
-			PreparedStatement stmt = conn.prepareStatement(sql);
-			ResultSet rs = stmt.executeQuery();
-
-			while (rs.next()) {
-				emp = new Employee(rs.getInt(1), rs.getString(2), rs.getString(3), rs.getInt(4), rs.getString(5), 
-						rs.getString(6), rs.getInt(7), rs.getInt(8), rs.getInt(9), rs.getInt(10), rs.getString(11),
-						rs.getString(12), rs.getInt(13));
-				empList.add(emp);
-
-			}
-
+		String sql = "SELECT * FROM employee e JOIN address a ON e.address_id = a.id"
+				+ " JOIN salary sal ON e.salary_level=sal.level"
+				+ " JOIN store sto ON e.store_id = sto.id"
+				+ " JOIN department dep ON dep.department_id = e.department_id ORDER BY e.emp_id asc";
+				try {
+					Connection conn = DriverManager.getConnection(url, user, pass);
+					PreparedStatement stmt = conn.prepareStatement(sql);
+					ResultSet rs = stmt.executeQuery();
+					while (rs.next()) {
+						Address a = new Address(rs.getInt(14), rs.getString(15), rs.getString(16), rs.getString(17), rs.getInt(18), rs.getString(19));
+						emp = new Employee(rs.getInt(1), rs.getString(2), rs.getString(3), a, rs.getString(5), 
+								rs.getString(6), rs.getInt(7), rs.getInt(8), rs.getInt(9), rs.getInt(10), rs.getString(11),
+								rs.getString(12), rs.getInt(13)); 
+						empList.add(emp);
+					}
 			rs.close();
 			stmt.close();
 			conn.close();
