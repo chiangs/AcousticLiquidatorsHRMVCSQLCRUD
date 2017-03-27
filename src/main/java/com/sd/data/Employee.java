@@ -10,7 +10,7 @@ public class Employee {
 	int employeeID;
 	String firstName;
 	String lastName;
-	int address_id;
+	Address address;
 	String dob;
 	String jobTitle;
 	int salaryLevel;
@@ -25,13 +25,13 @@ public class Employee {
 		
 	}
 	
-	public Employee(int employeeID, String firstName, String lastName, int address_id, String dob, String jobTitle,
+	public Employee(int employeeID, String firstName, String lastName, Address address, String dob, String jobTitle,
 			int salaryLevel, int storeID, int departmentID, int supervisor, String hireDate, String email, int status) {
 		super();
 		this.employeeID = employeeID;
 		this.firstName = firstName;
 		this.lastName = lastName;
-		this.address_id = address_id;
+		this.address = address;
 		this.dob = dob;
 		this.jobTitle = jobTitle;
 		this.salaryLevel = salaryLevel;
@@ -46,7 +46,7 @@ public class Employee {
 	@Override
 	public String toString() {
 		return "Employee [employeeID=" + employeeID + ", firstName=" + firstName + ", lastName=" + lastName
-				+ ", address_id=" + address_id + ", dob=" + dob + ", jobTitle=" + jobTitle + ", salaryLevel="
+				 + ", dob=" + dob + ", jobTitle=" + jobTitle + ", salaryLevel="
 				+ salaryLevel + ", storeID=" + storeID + ", departmentID=" + departmentID + ", supervisor=" + supervisor
 				+ ", hireDate=" + hireDate + ", email=" + email + ", status=" + status + "]";
 	}
@@ -69,11 +69,11 @@ public class Employee {
 	public void setLastName(String lastName) {
 		this.lastName = lastName;
 	}
-	public int getAddress_id() {
-		return address_id;
+	public Address getAddress() {
+		return address;
 	}
-	public void setAddress_id(int address_id) {
-		this.address_id = address_id;
+	public void setAddress(Address address) {
+		this.address = address;
 	}
 	public String getDob() {
 		return dob;

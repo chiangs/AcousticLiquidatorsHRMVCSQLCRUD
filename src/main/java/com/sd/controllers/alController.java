@@ -9,9 +9,9 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.sd.data.Address;
 import com.sd.data.Employee;
 import com.sd.data.HRDAO;
-import com.sd.data.HRDAOImpl;
 
 @Controller
 public class alController {
@@ -60,45 +60,7 @@ public class alController {
 		mv.addObject("employees", employees);
 		return mv;
 	}
-//
-//	@RequestMapping(value = "getEmployeeInfo.do", params = "name", method = RequestMethod.GET)
-//	public ModelAndView getByName(@RequestParam("name") String n) {
-//		ModelAndView mv = new ModelAndView();
-//		Employee emp = dao.getEmployeeByName(n);
-//		mv.setViewName("home");
-//		mv.addObject("employee", emp);
-//		return mv;
-//	}
 
-//	@RequestMapping(value = "getEmployeeInfo.do", params = "address", method = RequestMethod.GET)
-//	public ModelAndView getByName(@RequestParam("address") String a) {
-//		ModelAndView mv = new ModelAndView();
-//		Employee emp = dao.getEmployeeByName(a);
-//		mv.setViewName("home");
-//	    mv.addObject("employee", emp);
-//		return mv;
-//	}
-
-//	@RequestMapping(value = "getEmployeeInfo.do", params = "department", method = RequestMethod.GET)
-//	public ModelAndView getByName(@RequestParam("department") String d) {
-//		ModelAndView mv = new ModelAndView();
-//		Employee emp = dao.getEmployeeByDepartment(d);
-//		mv.setViewName("home");
-//		mv.addObject("employee", emp);
-//		return mv;
-//	}
-
-//	@RequestMapping(value = "getEmployeeInfo.do", params = "salary", method = RequestMethod.GET)
-//	public ModelAndView getByName(@RequestParam("salary") int s) {
-//		ModelAndView mv = new ModelAndView();
-//		Employee emp = dao.getEmployeeBySalary(s);
-//		mv.setViewName("home");
-//	    mv.addObject("employee", emp);
-//		return mv;
-//
-//	}
-
-	
 	
 	// deletes employee via button
 	@RequestMapping(value = "deleteEmployee.do", method = RequestMethod.POST)
@@ -133,11 +95,21 @@ public class alController {
 	
 	// Actual editing/updating of employee
 	@RequestMapping(value = "update.do", method = RequestMethod.POST)
-	public ModelAndView addEmployee(Employee employee) {
+	public ModelAndView addEmployee(Employee employee, @RequestParam("address_id") int id) {
 		ModelAndView mv = new ModelAndView();
+		Address a = new Address();
+		a.setId(id);
+		employee.setAddress(a);
 		mv.setViewName("editEmployee");
 		dao.updateEmployee(employee);
-		System.out.println(employee);
+		return getEmployeeById();
+	}
+	
+	@RequestMapping(value = "updateAddress.do", method = RequestMethod.POST)
+	public ModelAndView addEmployee(Address a) {
+		ModelAndView mv = new ModelAndView();
+		mv.setViewName("editEmployee");
+		dao.updateAddress(a);
 		return getEmployeeById();
 	}
 
