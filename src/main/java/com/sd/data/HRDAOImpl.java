@@ -48,7 +48,7 @@ public class HRDAOImpl implements HRDAO {
 
 	@Override
 	public Employee addEmployee(Employee newEmp) {
-
+		
 		String firstName = newEmp.getFirstName();
 		String lastName = newEmp.getLastName();
 		int address_id = newEmp.getAddress_id();
@@ -61,7 +61,7 @@ public class HRDAOImpl implements HRDAO {
 		String hireDate = newEmp.getHireDate();
 		String email = newEmp.getEmail();
 
-		String sql = "INSERT INTO employee (first_name, last_name, address_id, date_of_birth, job_title, salary_level, store_id, department_id, supervisor_id, hire_date, email, active_inactive) "
+		String sql = "INSERT INTO employee (first_name, last_name, address_id, date_of_birth, job_title, salary_level, store_id, department_id, supervisor_id, hire_date, email) "
 				+ " VALUES (?,?,?,?,?,?,?,?,?,?,?)";
 
 //		String sql2 = "SELECT LAST_INSERT_ID()";
@@ -74,11 +74,11 @@ public class HRDAOImpl implements HRDAO {
 
 			stmt.setString(1, firstName);
 			stmt.setString(2, lastName);
-			stmt.setInt(3, address_id);
+			stmt.setInt(3, 1);
 			stmt.setString(4, dob);
 			stmt.setString(5, jobTitle);
 			stmt.setInt(6, salaryLevel);
-			stmt.setInt(7, storeID);
+			stmt.setInt(7, 1);
 			stmt.setInt(8, departmentID);
 			stmt.setInt(9, supervisor);
 			stmt.setString(10, hireDate);
