@@ -42,7 +42,8 @@ If more time were available:
 </p>
 
 ## Code Examples
-```public Employee updateEmployee(Employee emp) {
+```
+public Employee updateEmployee(Employee emp) {
 
 		String firstName = emp.getFirstName();
 		String lastName = emp.getLastName();
