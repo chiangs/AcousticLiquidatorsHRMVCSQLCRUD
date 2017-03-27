@@ -12,9 +12,9 @@
 
 				<ul class="fa-ul contact">
 					<li><i class="fa fa-user" aria-hidden="true"></i>
-					<a target="_blank" href="https://www.danrezo.com"> Daniel Balarezo</a></li>
+					<a target="_blank" href="http://www.danrezo.com"> Daniel Balarezo</a></li>
 					<li><i class="fa fa-user" aria-hidden="true"></i>
-					<a target="_blank" href="https://www.chiangs.ninja"> Stephen Chiang</a></li>
+					<a target="_blank" href="http://www.chiangs.ninja"> Stephen Chiang</a></li>
 					<li><i class="fa fa-user" aria-hidden="true"></i>
 					<a target="_blank" href="#"> Will Roberts</a></li>
 				</ul>
