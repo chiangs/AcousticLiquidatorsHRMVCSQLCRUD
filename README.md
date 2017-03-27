@@ -16,6 +16,7 @@ If more time were available:
 <p align="center">
 <img src="src/main/webapp/images/scrn3.png" height="245">
 <img src="src/main/webapp/images/scrn4.png" height="245"></p>
+<p align="center"><img src="src/main/webapp/images/scrn6.png" height="245"></p>
 
 
 ## In This Document
