@@ -203,4 +203,41 @@ public class HRDAOImpl implements HRDAO {
 		}
 		return empList;
 	}
+
+	@Override
+	public Address updateAddress(Address a) {
+
+		 	int id = a.getId();
+		    String address = a.getAddress();
+		    String city = a.getCity();
+		    String state_province = a.getState_province();
+		    int postal_code = a.getPostal_code();
+		    String country_id = a.getCountry_id();
+		
+		
+		String sql = "UPDATE address SET address =?, "
+        		+ "city = ?, state_province = ?, postal_code = ?"
+        		+ ", country_id = ? WHERE id = ?";
+
+        try {
+            Connection conn = DriverManager.getConnection(url, user, pass);
+            PreparedStatement stmt = conn.prepareStatement(sql);
+
+            stmt.setString(1, address);
+			stmt.setString(2, city);
+			stmt.setString(3, state_province);
+			stmt.setInt(4, postal_code);
+			stmt.setString(5, country_id);
+			stmt.setInt(6, id);
+			
+            int uc = stmt.executeUpdate();
+
+            stmt.close();
+            conn.close();
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return a;
+	}
 }

@@ -104,6 +104,14 @@ public class alController {
 		dao.updateEmployee(employee);
 		return getEmployeeById();
 	}
+	
+	@RequestMapping(value = "updateAddress.do", method = RequestMethod.POST)
+	public ModelAndView addEmployee(Address a) {
+		ModelAndView mv = new ModelAndView();
+		mv.setViewName("editEmployee");
+		dao.updateAddress(a);
+		return getEmployeeById();
+	}
 
 
 }
